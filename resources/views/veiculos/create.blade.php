@@ -6,8 +6,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                Informe abaixo as informações do cliente
-                <a class="pull-right" href="{{ url('clientes')}}">Listagem cliente</a>
+                Informe abaixo as informações do veiculo
+                <a class="pull-right" href="{{ url('veiculos')}}">Listagem veiculo</a>
                 </div>
 
                 <div class="panel-body">
@@ -20,9 +20,9 @@
                     @endif
                 	
                     @if (Request::is('*/editar'))
-                        {!! Form::model($cliente, ['method' => 'PATCH', 'url' => 'clientes/'.$cliente->id]) !!}
+                        {!! Form::model($veiculo, ['method' => 'PATCH', 'url' => 'veiculos/'.$veiculo->id]) !!}
                     @else
-                        {!! Form::open(['url' => 'clientes/salvar']) !!}
+                        {!! Form::open(['url' => 'veiculos/salvar']) !!}
                     @endif
 
                         {!! Form::label('nome', 'Nome') !!}

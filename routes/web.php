@@ -18,3 +18,5 @@ Route::get('premmier','CarroControler@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/veiculos', 'VeiculoController@index')->name('veiculos');
