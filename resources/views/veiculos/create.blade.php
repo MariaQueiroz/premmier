@@ -25,7 +25,7 @@
                         {!! Form::open(['url' => 'veiculos/salvar']) !!}
                     @endif
 
-                        {!! Form::label('nome', 'Nome') !!}
+                        {!! Form::label('marca', 'Marca') !!}
                         {!! Form::input('text','nome',null, ['class' => 'form-control','autofocus','placeholder'=>'Nome']) !!}
                         {!! Form::label('endereco', 'Endereço') !!}
                         {!! Form::input('text','endereco',null, ['class' => 'form-control','','placeholder'=>'Endereço']) !!}
