@@ -26,11 +26,39 @@
                     @endif
 
                         {!! Form::label('marca', 'Marca') !!}
-                        {!! Form::input('text','nome',null, ['class' => 'form-control','autofocus','placeholder'=>'Nome']) !!}
-                        {!! Form::label('endereco', 'Endereço') !!}
-                        {!! Form::input('text','endereco',null, ['class' => 'form-control','','placeholder'=>'Endereço']) !!}
-                    	{!! Form::label('telefone', 'Telefone') !!}
-                        {!! Form::input('text','telefone',null, ['class' => 'form-control','','placeholder'=>'(__) _____-____']) !!}
+                        {!! Form::input('text','marca',null, ['class' => 'form-control','autofocus','placeholder'=>'Marca']) !!}
+
+                        {!! Form::label('placa', 'Placa') !!}
+                        {!! Form::input('text','placa',null, ['class' => 'form-control','','placeholder'=>'Placa']) !!}
+
+                        {!! Form::label('chassi', 'Chassi') !!}
+                        {!! Form::input('text','Chassi',null, ['class' => 'form-control','','placeholder'=>'Chassi']) !!}
+
+                        {!! Form::label('renavan', 'Renavan ') !!}
+                        {!! Form::input('text','renavan',null, ['class' => 'form-control','','placeholder'=>'Renavan']) !!}
+
+                        {!! Form::label('ano', 'Ano') !!}
+                        {!! Form::input('text','ano',null, ['class' => 'form-control','','placeholder'=>'Ano']) !!}
+
+                        {!! Form::label('cor', 'Cor') !!}
+                        {!! Form::input('text','Cor',null, ['class' => 'form-control','','placeholder'=>'Cor']) !!}
+
+                        {!! Form::label('tipo', 'Tipo') !!}
+                        {!! Form::input('text','tipo',null, ['class' => 'form-control','','placeholder'=>'Tipo']) !!}
+
+                        {!! Form::label('quantidade_portas', 'Quantidade de portas') !!}
+                        {!! Form::input('text','quantidade_portas',null, ['class' => 'form-control','','placeholder'=>'Quantidade de portas']) !!}
+
+                        {!! Form::label('tipo_combustivel', 'Tipo de Combustível') !!}
+                        {!! Form::input('text','tipo_combustivel',null, ['class' => 'form-control','','placeholder'=>'Tipo de Combustível']) !!}
+
+                        {!! Form::label('cambio', 'Cambio') !!}
+                        {!! Form::input('text','placa',null, ['class' => 'form-control','','placeholder'=>'Placa']) !!}
+
+                        {!! Form::label('ar_condicionado', 'Ar Condicionado') !!}
+                        {!! Form::select('select_ar_condicionado',['sim'=>'sim','nao'=>'nao'], ['class' => 'form-control']) !!}
+
+
 
                         <div class="col-sm-12">
                         <h1 class="text-center">
