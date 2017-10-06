@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Marca;
+use App\Http\Requests\MarcaRequest;
 class MarcaController extends Controller
 {
 
@@ -14,40 +15,26 @@ class MarcaController extends Controller
     public function novo(){
         return view('marcas.create');
     }
-    // request para trabalhar com dados enviados via Post
-    public function salvar(Request $request){
-        // var_dump($request); // mostra os dados do request
+    public function store(MarcaRequest $request){
+        $novo_marca = $request->all();
+        Marca::create($novo_marca);
+        return redirect()->route('marcas');
+    }
+    public function destroy($id){
+        Marca::find($id)->delete();
+        return redirect()->route('marcas');
+    }
 
-        $marca = new Marca();
-        $marca = $marca->create($request->all());
-
-        \Session::flash('mensagem_sucesso','Marca cadastrado com sucesso!');
-
-        // retorna o array do objeto marca
-        // return $marca;
-        return Redirect::to('marcas/novo');
+    public function edit($id){
+        $marca = Marca::find($id);
+        return view('marcas.edit',compact('marca'));
 
     }
-    public function editar($id){
-        $marca = Marca::findOrFail($id);
-        return view('marcas.create', ['marca' => $marca]);
+
+    public function update(MarcaRequest $request,$id){
+        $marca = Marca::find($id)->update($request->all());
+        return redirect()->route('marcas');
     }
-    public function atualizar($id, Request $request){
-        $marca = Marca::findOrFail($id);
-        $marca->update($request->all());
 
-        \Session::flash('mensagem_sucesso','Marca atualizado com sucesso!');
-
-        return Redirect::to('marcas/'.$marca->id.'/editar');
-
-    }
-    public function deletar($id){
-        $marca = Marca::findOrFail($id);
-        $marca->delete();
-
-        \Session::flash('mensagem_sucesso','Marca deletado com sucesso!');
-
-        return Redirect::to('marcas');
-
-    }
 }
+

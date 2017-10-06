@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                Informe abaixo as informações do veiculo
+                Informe abaixo as dados do veiculo
                 <a class="pull-right" href="{{ url('veiculos')}}">Listagem veiculo</a>
                 </div>
 
@@ -25,14 +25,14 @@
                         {!! Form::open(['url' => 'veiculos/salvar']) !!}
                     @endif
 
-                        {!! Form::label('marca', 'Marca') !!}
+                        {!! Form::label('marcas', 'Marca') !!}
                         {!! Form::input('text','marca',null, ['class' => 'form-control','autofocus','placeholder'=>'Marca']) !!}
 
                         {!! Form::label('placa', 'Placa') !!}
                         {!! Form::input('text','placa',null, ['class' => 'form-control','','placeholder'=>'Placa']) !!}
 
                         {!! Form::label('chassi', 'Chassi') !!}
-                        {!! Form::input('text','Chassi',null, ['class' => 'form-control','','placeholder'=>'Chassi']) !!}
+                        {!! Form::input('text','chassi',null, ['class' => 'form-control','','placeholder'=>'Chassi']) !!}
 
                         {!! Form::label('renavan', 'Renavan ') !!}
                         {!! Form::input('text','renavan',null, ['class' => 'form-control','','placeholder'=>'Renavan']) !!}
@@ -53,11 +53,10 @@
                         {!! Form::input('text','tipo_combustivel',null, ['class' => 'form-control','','placeholder'=>'Tipo de Combustível']) !!}
 
                         {!! Form::label('cambio', 'Cambio') !!}
-                        {!! Form::input('text','placa',null, ['class' => 'form-control','','placeholder'=>'Placa']) !!}
-
+                        {!! Form::select('select_cambio',['manual'=>'manual','automatico'=>'automatico'], ['class' => 'form-control']) !!}
+                        <br>
                         {!! Form::label('ar_condicionado', 'Ar Condicionado') !!}
                         {!! Form::select('select_ar_condicionado',['sim'=>'sim','nao'=>'nao'], ['class' => 'form-control']) !!}
-
 
 
                         <div class="col-sm-12">

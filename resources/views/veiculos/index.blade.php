@@ -26,24 +26,7 @@
                             <th>Modelo</th>
                             <th>Ano</th>
                             <th>Placa</th>
-                            <th>Chassi</th>
-                            <th>Renavan</th>
                             <th>Cor</th>
-                            <th>Tipo</th>
-                            <th>Quantidade de Portas</th>
-                            <th>Tipo de Combustivel</th>
-                            <th>Cambio automatico/manual</th>
-                            <th>Quilometragem</th>
-                            <th>Preco a vista</th>
-                            <th>Preco com troca</th>
-                            <th>Ar Condicionado</th>
-                            <th>Direcao Hidraulica</th>
-                            <th>Vidro Eletrico</th>
-                            <th>Ar Quente</th>
-                            <th>Trava Eletrica</th>
-                            <th>Teto Solar</th>
-                            <th>Air Bags</th>
-                            <th>Abs</th>
                             <th>Ações</th>
                             </thead>
                             <tbody>
@@ -53,22 +36,8 @@
                                     <td>{{$veiculo->modelo}}</td>
                                     <td>{{$veiculo->ano}}</td>
                                     <td>{{$veiculo->placa}}</td>
-                                    <td>{{$veiculo->chassi}}</td>
-                                    <td>{{$veiculo->renavan}}</td>
-                                    <td>{{$veiculo->tipo}}</td>
-                                    <td>{{$veiculo->quantidade_portas}}</td>
-                                    <td>{{$veiculo->tipo_combustivel}}</td>
-                                    <td>{{$veiculo->cambio}}</td>
-                                    <td>{{$veiculo->quilometragem}}</td>
-                                    <td>{{$veiculo->preco_a_vista}}</td>
-                                    <td>{{$veiculo->preco_com_troca}}</td>
-                                    <td>{{$veiculo->ar_condicionado}}</td>
-                                    <td>{{$veiculo->direcao_hidraulica}}</td>
-                                    <td>{{$veiculo->ar_quente}}</td>
-                                    <td>{{$veiculo->trava_eletrica}}</td>
-                                    <td>{{$veiculo->teto_solar}}</td>
-                                    <td>{{$veiculo->air_bags}}</td>
-                                    <td>{{$veiculo->abs}}</td>
+                                    <td>{{$veiculo->cor}}</td>
+
                                     <td>
                                         <a href="veiculos/{{ $veiculo->id}}/editar" class="btn btn-default btn-sm">Editar</a>
                                         {!! Form::open(['method' => 'DELETE', 'url' => '/veiculos/'.$veiculo->id, 'style' =>  'display: inline;']) !!}

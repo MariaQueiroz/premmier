@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\VeiculoRequest;
 use App\Veiculo;
 
 class VeiculoController extends Controller
@@ -15,7 +16,7 @@ class VeiculoController extends Controller
         return view('veiculos.create');
     }
     // request para trabalhar com dados enviados via Post
-    public function salvar(Request $request){
+    public function salvar(VeiculoRequest $request){
         // var_dump($request); // mostra os dados do request
 
         $veiculo = new Veiculo();
@@ -23,8 +24,8 @@ class VeiculoController extends Controller
 
         \Session::flash('mensagem_sucesso','Veiculo cadastrado com sucesso!');
 
-        // retorna o array do objeto veiculo
-        // return $veiculo;
+    // retorna o array do objeto veiculo
+    // return $veiculo;
         return Redirect::to('veiculos/novo');
 
     }
