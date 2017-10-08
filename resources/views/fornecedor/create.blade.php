@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Nova Marca</h1>
+        <h1>Novo Fornecedor</h1>
         @if($errors->any())
             <ul class="alert alert-danger">
                 @foreach($errors->all() as $error)
@@ -11,10 +11,18 @@
             </ul>
         @endif
 
-        {!! Form::open(['route' => 'marcas.store']) !!}
+        {!! Form::open(['route' => 'fornecedor.store']) !!}
         <div class="form-group">
             {!! Form::label('nome','Nome:') !!}
             {!! Form::text('nome',null,['class'=>'form-control'])!!}
+        </div>
+        <div class="form-grou">
+            {!! Form::label('telefone','Telefone:') !!}
+            {!! Form::text('telefone',null,['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('endereco','Endereco:') !!}
+            {!! Form::text('endereco',null,['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">

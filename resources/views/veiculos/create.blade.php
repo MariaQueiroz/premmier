@@ -1,29 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                Informe abaixo as dados do veiculo
-                <a class="pull-right" href="{{ url('veiculos')}}">Listagem veiculo</a>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Informe abaixo as dados do veiculo
+                        <a class="pull-right" href="{{ url('veiculos')}}">Listagem veiculo</a>
+                    </div>
 
-                <div class="panel-body">
+                    <div class="panel-body">
 
-                    @if (Session::has('mensagem_sucesso'))
-                        <div class="alert alert-success alert-dismissable">
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                            <strong>Sucesso!</strong> {{ Session::get('mensagem_sucesso') }}
-                        </div>
-                    @endif
-                	
-                    @if (Request::is('*/editar'))
-                        {!! Form::model($veiculo, ['method' => 'PATCH', 'url' => 'veiculos/'.$veiculo->id]) !!}
-                    @else
-                        {!! Form::open(['url' => 'veiculos/salvar']) !!}
-                    @endif
+                        @if (Session::has('mensagem_sucesso'))
+                            <div class="alert alert-success alert-dismissable">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                <strong>Sucesso!</strong> {{ Session::get('mensagem_sucesso') }}
+                            </div>
+                        @endif
+
+                        @if (Request::is('*/editar'))
+                            {!! Form::model($veiculo, ['method' => 'PATCH', 'url' => 'veiculos/'.$veiculo->id]) !!}
+                        @else
+                            {!! Form::open(['url' => 'veiculos/salvar']) !!}
+                        @endif
 
                         {!! Form::label('marcas', 'Marca') !!}
                         {!! Form::input('text','marca',null, ['class' => 'form-control','autofocus','placeholder'=>'Marca']) !!}
@@ -60,15 +60,15 @@
 
 
                         <div class="col-sm-12">
-                        <h1 class="text-center">
-                            {!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
-                        </h1>
+                            <h1 class="text-center">
+                                {!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
+                            </h1>
                         </div>
-                	{!! Form::close() !!}
+                        {!! Form::close() !!}
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

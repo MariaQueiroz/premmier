@@ -5,8 +5,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Marcas
-                        <a class="pull-right" href="{{ url('marcas/create')}}">Nova Marca</a>
+                        Fornecedores
+                        <a class="pull-right" href="{{ url('marcas/create')}}">Novo Fornecedor</a>
                     </div>
 
                     <div class="panel-body">
@@ -14,20 +14,23 @@
         <thead>
         <tr>
             <th>Nome</th>
-           
+            <th>Telefone</th>
+            <th>Endereço</th>
             <th>Ação</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($marcas as $marca)
+        @foreach($fornecedor as $fornecedor)
             <tr>
-                <td>{{ $marca-> nome }}</td>
+                <td>{{ $fornecedor-> nome }}</td>
+                <td>{{ $fornecedor->telefone}}</td>
+                <td>{{ $fornecedor->endereco}}</td>
 
              a
                 <td>
-                    <a href="{{route('marca.edit',['id'=>$marca->id])}}"
+                    <a href="{{route('$fornecedor.edit',['id'=>$fornecedor->id])}}"
                        class="btn-sm btn-success">Editar</a>
-                    <a href="{{route('marcas',['id'=>$marca->id])}}"
+                    <a href="{{route('$fornecedor',['id'=>$fornecedor->id])}}"
                        class="btn-sm btn-danger">Remover</a>
 
                 </td>

@@ -12,7 +12,7 @@ class MarcaController extends Controller
         $marcas = Marca::get();
         return view('marcas.index', ['marcas' => $marcas]);
     }
-    public function novo(){
+    public function create(){
         return view('marcas.create');
     }
     public function store(MarcaRequest $request){
@@ -26,13 +26,13 @@ class MarcaController extends Controller
     }
 
     public function edit($id){
-        $marca = Marca::find($id);
+        $marcas = Marca::find($id);
         return view('marcas.edit',compact('marca'));
 
     }
 
     public function update(MarcaRequest $request,$id){
-        $marca = Marca::find($id)->update($request->all());
+        $marcas = Marca::find($id)->update($request->all());
         return redirect()->route('marcas');
     }
 

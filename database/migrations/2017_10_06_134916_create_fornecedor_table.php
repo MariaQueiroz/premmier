@@ -15,11 +15,9 @@ class CreateFornecedorTable extends Migration
     {
         Schema::create('fornecedor', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome',50);
-            $table->string('telefone',20);
-            $table->string('endereco',150);
-
-
+            $table->string('nome');
+            $table->string('telefone');
+            $table->string('endereco');
             $table->timestamps();
         });
     }

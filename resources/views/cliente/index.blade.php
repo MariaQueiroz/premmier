@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Clientes
-                        <a class="pull-right" href="{{ url('clientes/novo')}}">Novo Cliente</a>
+                        <a class="pull-right" href="{{ url('clientes/create')}}">Novo Cliente</a>
                     </div>
 
 
@@ -24,16 +24,25 @@
                         <table class="table">
                             <thead>
                             <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>E-mail</th>
                             <th>Endereço</th>
                             <th>Telefone</th>
+                            <th>CPF</th>
+                            <th>RG</th>
+
                             <th>Ações</th>
                             </thead>
                             <tbody>
                             @foreach ($clientes as $cliente)
                                 <tr>
                                     <td>{{$cliente->nome}}</td>
-                                    <td>{{$cliente->telefone}}</td>
+                                    <td>{{$cliente->sobrenome}}</td>
+                                    <td>{{$cliente->email}}</td>
                                     <td>{{$cliente->endereco}}</td>
+                                    <td>{{$cliente->telefone}}</td>
+                                    <td>{{$cliente->cpf}}</td>
+                                    <td>{{$cliente->rg}}</td>
                                     <td>
                                         <a href="clientes/{{ $cliente->id}}/editar" class="btn btn-default btn-sm">Editar</a>
                                         {!! Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' =>  'display: inline;']) !!}

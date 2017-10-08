@@ -3,51 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Fornecedor;
+use App\Http\Requests\FornecedorRequest;
 class FornecedorController extends Controller
 {
-
     public function index(){
-        $fornecedors = Fornecedor::get();
-        return view('fornecedors.index', ['fornecedors' => $fornecedors]);
+        $fornecedor = Fornecedor::get();
+        return view('fornecedor.index', ['fornecedor' => $fornecedor]);
     }
-    public function novo(){
-        return view('fornecedors.create');
+    public function create(){
+        return view('fornecedor.create');
     }
-    // request para trabalhar com dados enviados via Post
-    public function salvar(Request $request){
-        // var_dump($request); // mostra os dados do request
-
-        $fornecedor = new Fornecedor();
-        $fornecedor = $fornecedor->create($request->all());
-
-        \Session::flash('mensagem_sucesso','Fornecedor cadastrado com sucesso!');
-
-        // retorna o array do objeto fornecedor
-        // return $fornecedor;
-        return Redirect::to('fornecedors/novo');
-
+    public function store(FornecedorRequest $request){
+        $novo_fornecedor = $request->all();
+        Fornecedor::create($novo_fornecedor);
+        return redirect()->route('fornecedor');
     }
-    public function editar($id){
-        $fornecedor = Fornecedor::findOrFail($id);
-        return view('fornecedors.create', ['fornecedor' => $fornecedor]);
+    public function destroy($id){
+        Fornecedor::find($id)->delete();
+        return redirect()->route('fornecedor');
     }
-    public function atualizar($id, Request $request){
-        $fornecedor = Fornecedor::findOrFail($id);
-        $fornecedor->update($request->all());
 
-        \Session::flash('mensagem_sucesso','Fornecedor atualizado com sucesso!');
-
-        return Redirect::to('fornecedors/'.$fornecedor->id.'/editar');
+    public function edit($id){
+        $fornecedor = Fornecedor::find($id);
+        return view('fornecedor.edit',compact('fornecedor'));
 
     }
-    public function deletar($id){
-        $fornecedor = Fornecedor::findOrFail($id);
-        $fornecedor->delete();
 
-        \Session::flash('mensagem_sucesso','Fornecedor deletado com sucesso!');
-
-        return Redirect::to('fornecedors');
-
+    public function update(FornecedorRequest $request,$id){
+        $fornecedor = Fornecedor::find($id)->update($request->all());
+        return redirect()->route('fornecedor');
     }
+
+
+
 }

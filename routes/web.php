@@ -21,12 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix'=>'veiculos','where'=>['id'=>'[0-9]+']],function(){
-    Route::get('',              ['as'=>'veiculo',           'uses'=>'VeiculoController@index']);
-    Route::get('create',        ['as'=>'veiculo.create',    'uses'=>'VeiculoController@create']);
-    Route::get('{id}/destroy',  ['as'=>'veiculo.destroy',   'uses'=>'VeiculoController@destroy']);
-    Route::get('{id}/edit',     ['as'=>'veiculo.edit',      'uses'=>'VeiculoController@edit']);
-    Route::put('{id}/update',   ['as'=>'veiculo.update',    'uses'=>'VeiculoController@update']);
-    Route::post('store',        ['as'=>'veiculo.store',     'uses'=>'VeiculoController@store']);
+    Route::get('',                  ['as'=>'veiculo',           'uses'=>'VeiculoController@index']);
+    Route::get('novo',              ['as'=>'veiculo.create',    'uses'=>'VeiculoController@novo']);
+    Route::get('{id}/deletar',      ['as'=>'veiculo.destroy',   'uses'=>'VeiculoController@deletar']);
+    Route::get('{id}/editar',       ['as'=>'veiculo.edit',      'uses'=>'VeiculoController@editar']);
+    Route::put('{id}/atualizar',    ['as'=>'veiculo.update',    'uses'=>'VeiculoController@atualizar']);
+    Route::post('salvar',           ['as'=>'veiculo.store',     'uses'=>'VeiculoController@salvar']);
 });
 
 Route::group(['prefix'=>'marcas','where'=>['id'=>'[0-9]+']],function(){
@@ -38,12 +38,20 @@ Route::group(['prefix'=>'marcas','where'=>['id'=>'[0-9]+']],function(){
     Route::post('store',        ['as'=>'marcas.store',     'uses'=>'MarcaController@store']);
 });
 
+Route::group(['prefix'=>'fornecedor','where'=>['id'=>'[0-9]+']],function(){
+    Route::get('',              ['as'=>'fornecedor',           'uses'=>'FornecedorController@index']);
+    Route::get('create',        ['as'=>'fornecedor.create',    'uses'=>'FornecedorController@create']);
+    Route::get('{id}/destroy',  ['as'=>'fornecedor.destroy',   'uses'=>'FornecedorController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'fornecedor.edit',      'uses'=>'FornecedorController@edit']);
+    Route::put('{id}/update',   ['as'=>'fornecedor.update',    'uses'=>'FornecedorController@update']);
+    Route::post('store',        ['as'=>'fornecedor.store',     'uses'=>'FornecedorController@store']);
+});
 
-Route::group(['prefix'=>'novo','where'=>['id'=>'[0-9]+']],function(){
-    Route::get('',              ['as'=>'novo',           'uses'=>'NovoController@index']);
-    Route::get('create',        ['as'=>'novo.create',    'uses'=>'NovoController@create']);
-    Route::get('{id}/destroy',  ['as'=>'novo.destroy',   'uses'=>'NovoController@destroy']);
-    Route::get('{id}/edit',     ['as'=>'novo.edit',      'uses'=>'NovoController@edit']);
-    Route::put('{id}/update',   ['as'=>'novo.update',    'uses'=>'NovoController@update']);
-    Route::post('store',        ['as'=>'novo.store',     'uses'=>'NovoController@store']);
+Route::group(['prefix'=>'cliente','where'=>['id'=>'[0-9]+']],function(){
+    Route::get('',              ['as'=>'cliente',           'uses'=>'ClienteController@index']);
+    Route::get('create',        ['as'=>'cliente.create',    'uses'=>'ClienteController@create']);
+    Route::get('{id}/destroy',  ['as'=>'cliente.destroy',   'uses'=>'ClienteController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'cliente.edit',      'uses'=>'ClienteController@edit']);
+    Route::put('{id}/update',   ['as'=>'cliente.update',    'uses'=>'ClienteController@update']);
+    Route::post('store',        ['as'=>'cliente.store',     'uses'=>'ClienteController@store']);
 });

@@ -3,51 +3,40 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Cliente;
+use App\Http\Requests\ClienteRequest;
 class ClienteController extends Controller
+
+
 {
-
     public function index(){
-        $clientes = Cliente::get();
-        return view('clientes.index', ['clientes' => $clientes]);
+        $cliente = Cliente::get();
+        return view('fornecedor.index', ['Cliente' => $cliente]);
     }
-    public function novo(){
-        return view('clientes.create');
+    public function create(){
+        return view('cliente.create');
     }
-    // request para trabalhar com dados enviados via Post
-    public function salvar(Request $request){
-        // var_dump($request); // mostra os dados do request
-
-        $cliente = new Cliente();
-        $cliente = $cliente->create($request->all());
-
-        \Session::flash('mensagem_sucesso','Cliente cadastrado com sucesso!');
-
-        // retorna o array do objeto cliente
-        // return $cliente;
-        return Redirect::to('clientes/novo');
-
+    public function store(ClienteRequest $request){
+        $novo_cliente = $request->all();
+        Cliente::create($novo_cliente);
+        return redirect()->route('cliente');
     }
-    public function editar($id){
-        $cliente = Cliente::findOrFail($id);
-        return view('clientes.create', ['cliente' => $cliente]);
+    public function destroy($id){
+        Cliente::find($id)->delete();
+        return redirect()->route('cliente');
     }
-    public function atualizar($id, Request $request){
-        $cliente = Cliente::findOrFail($id);
-        $cliente->update($request->all());
 
-        \Session::flash('mensagem_sucesso','Cliente atualizado com sucesso!');
-
-        return Redirect::to('clientes/'.$cliente->id.'/editar');
+    public function edit($id){
+        $cliente = Cliente::find($id);
+        return view('cliente.edit',compact('cliente'));
 
     }
-    public function deletar($id){
-        $cliente = Cliente::findOrFail($id);
-        $cliente->delete();
 
-        \Session::flash('mensagem_sucesso','Cliente deletado com sucesso!');
-
-        return Redirect::to('clientes');
-
+    public function update(ClienteRequest $request,$id){
+        $cliente = Cliente::find($id)->update($request->all());
+        return redirect()->route('cliente');
     }
+
+
+
 }
