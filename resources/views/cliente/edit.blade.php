@@ -17,6 +17,11 @@
         </div>
 
         <div class="form-group">
+            {!! Form::label('telefone','Telefone:') !!}
+            {!! Form::text('telefone',$cliente->telefone,['class'=>'form-control'])!!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('sobrenome','Sobrenome:') !!}
             {!! Form::text('sobrenome',$cliente->sobrenome,['class'=>'form-control'])!!}
         </div>
@@ -29,11 +34,6 @@
         <div class="form-group">
             {!! Form::label('endereco','Endereco:') !!}
             {!! Form::text('endereco',$cliente->endereco,['class'=>'form-control'])!!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('telefone','Telefone:') !!}
-            {!! Form::text('telefone',$cliente->telefone,['class'=>'form-control'])!!}
         </div>
 
         <div class="form-group">

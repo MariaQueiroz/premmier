@@ -6,7 +6,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Fornecedores
-                        <a class="pull-right" href="{{ url('marcas/create')}}">Novo Fornecedor</a>
+                        <a class="pull-right" href="{{ url('fornecedor/create')}}">Novo Fornecedor</a>
                     </div>
 
                     <div class="panel-body">

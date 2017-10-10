@@ -23,8 +23,8 @@
                         <table class="table">
                             <thead>
                             <th>Nome</th>
-                            <th>Sobrenome</th>
                             <th>Telefone</th>
+                            <th>Sobrenome</th>
                             <th>E-mail</th>
                             <th>Senha</th>
                             <th>Ações</th>
@@ -33,8 +33,8 @@
                             @foreach ($atendentes as $atendente)
                                 <tr>
                                     <td>{{$atendente->nome}}</td>
-                                    <td>{{$atendente->sobrenome}}</td>
                                     <td>{{$atendente->telefone}}</td>
+                                    <td>{{$atendente->sobrenome}}</td>
                                     <td>{{$atendente->email}}</td>
                                     <td>{{$atendente->senha}}</td>
                                   

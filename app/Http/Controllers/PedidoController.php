@@ -3,51 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use\App\Pedido;
+use App\Http\Requests\PedidoRequest;
 class PedidoController extends Controller
+
 {
 
     public function index(){
         $pedidos = Pedido::get();
         return view('pedidos.index', ['pedidos' => $pedidos]);
     }
-    public function novo(){
+    public function create(){
         return view('pedidos.create');
     }
-    // request para trabalhar com dados enviados via Post
-    public function salvar(Request $request){
-        // var_dump($request); // mostra os dados do request
+    public function store(PedidoRequest $request){
+        $novo_pedido = $request->all();
+        Pedido::create($novo_pedido);
+        return redirect()->route('pedidos');
+    }
+    public function destroy($id){
+        Pedido::find($id)->delete();
+        return redirect()->route('pedidos');
+    }
 
-        $pedido = new Pedido();
-        $pedido = $pedido->create($request->all());
-
-        \Session::flash('mensagem_sucesso','Pedido cadastrado com sucesso!');
-
-        // retorna o array do objeto pedido
-        // return $pedido;
-        return Redirect::to('pedidos/novo');
+    public function edit($id){
+        $pedidos = Pedido::find($id);
+        return view('pedidos.edit',compact('pedido'));
 
     }
-    public function editar($id){
-        $pedido = Pedido::findOrFail($id);
-        return view('pedidos.create', ['pedido' => $pedido]);
-    }
-    public function atualizar($id, Request $request){
-        $pedido = Pedido::findOrFail($id);
-        $pedido->update($request->all());
 
-        \Session::flash('mensagem_sucesso','Pedido atualizado com sucesso!');
-
-        return Redirect::to('pedidos/'.$pedido->id.'/editar');
-
-    }
-    public function deletar($id){
-        $pedido = Pedido::findOrFail($id);
-        $pedido->delete();
-
-        \Session::flash('mensagem_sucesso','Pedido deletado com sucesso!');
-
-        return Redirect::to('pedidos');
-
+    public function update(PedidoRequest $request,$id){
+        $pedidos = Pedido::find($id)->update($request->all());
+        return redirect()->route('pedidos');
     }
 }

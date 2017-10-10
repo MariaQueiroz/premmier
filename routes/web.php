@@ -55,3 +55,21 @@ Route::group(['prefix'=>'cliente','where'=>['id'=>'[0-9]+']],function(){
     Route::put('{id}/update',   ['as'=>'cliente.update',    'uses'=>'ClienteController@update']);
     Route::post('store',        ['as'=>'cliente.store',     'uses'=>'ClienteController@store']);
 });
+
+Route::group(['prefix'=>'atendente','where'=>['id'=>'[0-9]+']],function(){
+    Route::get('',              ['as'=>'atendente',           'uses'=>'AtendenteController@index']);
+    Route::get('create',        ['as'=>'atendente.create',    'uses'=>'AtendenteController@create']);
+    Route::get('{id}/destroy',  ['as'=>'atendente.destroy',   'uses'=>'AtendenteController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'atendente.edit',      'uses'=>'AtendenteController@edit']);
+    Route::put('{id}/update',   ['as'=>'atendente.update',    'uses'=>'AtendenteController@update']);
+    Route::post('store',        ['as'=>'atendente.store',     'uses'=>'AtendenteController@store']);
+});
+
+Route::group(['prefix'=>'venda','where'=>['id'=>'[0-9]+']],function(){
+    Route::get('',              ['as'=>'venda',           'uses'=>'VendaController@index']);
+    Route::get('create',        ['as'=>'venda.create',    'uses'=>'VendaController@create']);
+    Route::get('{id}/destroy',  ['as'=>'venda.destroy',   'uses'=>'VendaController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'venda.edit',      'uses'=>'VendaController@edit']);
+    Route::put('{id}/update',   ['as'=>'venda.update',    'uses'=>'VendaController@update']);
+    Route::post('store',        ['as'=>'venda.store',     'uses'=>'VendaController@store']);
+});
