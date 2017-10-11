@@ -11,7 +11,7 @@ class ClienteController extends Controller
 {
     public function index(){
         $cliente = Cliente::get();
-        return view('fornecedor.index', ['Cliente' => $cliente]);
+        return view('cliente.index', ['Cliente' => $cliente]);
     }
     public function create(){
         return view('cliente.create');

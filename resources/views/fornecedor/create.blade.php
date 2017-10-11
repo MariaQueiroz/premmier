@@ -11,7 +11,7 @@
             </ul>
         @endif
 
-        {!! Form::open(['route' => 'fornecedor.store']) !!}
+        {!! Form::open(['route' => 'fornecedores.store']) !!}
         <div class="form-group">
             {!! Form::label('nome','Nome:') !!}
             {!! Form::text('nome',null,['class'=>'form-control'])!!}

@@ -20,7 +20,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($fornecedor as $fornecedor)
+        @foreach($fornecedores as $fornecedor)
             <tr>
                 <td>{{ $fornecedor-> nome }}</td>
                 <td>{{ $fornecedor->telefone}}</td>

@@ -39,12 +39,12 @@ Route::group(['prefix'=>'marcas','where'=>['id'=>'[0-9]+']],function(){
 });
 
 Route::group(['prefix'=>'fornecedor','where'=>['id'=>'[0-9]+']],function(){
-    Route::get('',              ['as'=>'fornecedor',           'uses'=>'FornecedorController@index']);
-    Route::get('create',        ['as'=>'fornecedor.create',    'uses'=>'FornecedorController@create']);
-    Route::get('{id}/destroy',  ['as'=>'fornecedor.destroy',   'uses'=>'FornecedorController@destroy']);
-    Route::get('{id}/edit',     ['as'=>'fornecedor.edit',      'uses'=>'FornecedorController@edit']);
-    Route::put('{id}/update',   ['as'=>'fornecedor.update',    'uses'=>'FornecedorController@update']);
-    Route::post('store',        ['as'=>'fornecedor.store',     'uses'=>'FornecedorController@store']);
+    Route::get('',              ['as'=>'fornecedores',           'uses'=>'FornecedoresController@index']);
+    Route::get('create',        ['as'=>'fornecedores.create',    'uses'=>'FornecedoresController@create']);
+    Route::get('{id}/destroy',  ['as'=>'fornecedores.destroy',   'uses'=>'FornecedoresController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'fornecedores.edit',      'uses'=>'FornecedoresController@edit']);
+    Route::put('{id}/update',   ['as'=>'fornecedores.update',    'uses'=>'FornecedoresController@update']);
+    Route::post('store',        ['as'=>'fornecedores.store',     'uses'=>'FornecedoresController@store']);
 });
 
 Route::group(['prefix'=>'cliente','where'=>['id'=>'[0-9]+']],function(){
@@ -72,4 +72,13 @@ Route::group(['prefix'=>'venda','where'=>['id'=>'[0-9]+']],function(){
     Route::get('{id}/edit',     ['as'=>'venda.edit',      'uses'=>'VendaController@edit']);
     Route::put('{id}/update',   ['as'=>'venda.update',    'uses'=>'VendaController@update']);
     Route::post('store',        ['as'=>'venda.store',     'uses'=>'VendaController@store']);
+});
+
+Route::group(['prefix'=>'compra','where'=>['id'=>'[0-9]+']],function(){
+    Route::get('',              ['as'=>'compra',           'uses'=>'CompraController@index']);
+    Route::get('create',        ['as'=>'compra.create',    'uses'=>'CompraController@create']);
+    Route::get('{id}/destroy',  ['as'=>'compra.destroy',   'uses'=>'CompraController@destroy']);
+    Route::get('{id}/edit',     ['as'=>'compra.edit',      'uses'=>'CompraController@edit']);
+    Route::put('{id}/update',   ['as'=>'compra.update',    'uses'=>'CompraController@update']);
+    Route::post('store',        ['as'=>'compra.store',     'uses'=>'CompraController@store']);
 });

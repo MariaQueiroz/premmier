@@ -10,7 +10,7 @@
                 @endforeach
             </ul>
         @endif
-        {!! Form::open(['route' => ["fornecedor.edit", $fornecedor->id],'method'=>'put']) !!}
+        {!! Form::open(['route' => ["fornecedores.edit", $fornecedor->id],'method'=>'put']) !!}
         <div class="form-group">
             {!! Form::label('nome','Nome:') !!}
             {!! Form::text('nome',$fornecedor->nome,['class'=>'form-control'])!!}

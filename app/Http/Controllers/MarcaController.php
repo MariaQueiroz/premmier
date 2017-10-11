@@ -27,7 +27,7 @@ class MarcaController extends Controller
 
     public function edit($id){
         $marcas = Marca::find($id);
-        return view('marcas.edit',compact('marca'));
+        return view('marcas.edit',compact('marcas'));
 
     }
 

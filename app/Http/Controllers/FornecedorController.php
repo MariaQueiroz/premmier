@@ -9,7 +9,7 @@ class FornecedorController extends Controller
 {
     public function index(){
         $fornecedor = Fornecedor::get();
-        return view('fornecedor.index', ['fornecedor' => $fornecedor]);
+        return view('fornecedores.index', ['fornecedor' => $fornecedor]);
     }
     public function create(){
         return view('fornecedor.create');
