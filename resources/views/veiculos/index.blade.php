@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Veiculos
-                        <a class="pull-right" href="{{ url('veiculos/novo')}}">Novo Veiculo</a>
+                        <a class="pull-right" href="{{ url('veiculos/create')}}">Novo Veiculo</a>
                     </div>
 
 
@@ -37,13 +37,12 @@
                                     <td>{{$veiculo->ano}}</td>
                                     <td>{{$veiculo->placa}}</td>
                                     <td>{{$veiculo->cor}}</td>
-
                                     <td>
-                                        <a href="veiculos/{{ $veiculo->id}}/editar" class="btn btn-default btn-sm">Editar</a>
-                                        {!! Form::open(['method' => 'DELETE', 'url' => '/veiculos/'.$veiculo->id, 'style' =>  'display: inline;']) !!}
-                                        <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
-                                        {!! Form::close() !!}
-                                        <button type="button" class="btn btn-default  btn-sm" data-toggle="modal" data-target="#exampleModal">Excluir</button>
+                                        <a href="{{route('veiculos.edit',['id'=>$veiculo->id])}}"
+                                           class="btn-sm btn-success">Editar</a>
+                                        <a href="{{route('veiculos.destroy',['id'=>$veiculo->id])}}"
+                                           class="btn-sm btn-danger">Remover</a>
+
                                     </td>
                             </tr>
 

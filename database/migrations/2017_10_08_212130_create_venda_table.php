@@ -13,7 +13,7 @@ class CreateVendaTable extends Migration
      */
     public function up()
     {
-        Schema::create('venda', function (Blueprint $table) {
+        Schema::create('vendas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('data');
             $table->string('valor',50);
@@ -32,6 +32,6 @@ class CreateVendaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('venda');
+        Schema::dropIfExists('vendas');
     }
 }

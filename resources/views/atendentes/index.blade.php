@@ -1,4 +1,3 @@
-<?php
 @extends('layouts.app')
 
 @section('content')
@@ -7,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Clientes
-                        <a class="pull-right" href="{{ url('clientes/create')}}">Novo Cliente</a>
+                        Atendentes
+                        <a class="pull-right" href="{{ url('atendentes/create')}}">Novo Atendente</a>
                     </div>
 
 
@@ -25,30 +24,22 @@
                             <thead>
                             <th>Nome</th>
                             <th>Telefone</th>
-                            <th>Sobrenome</th>
                             <th>E-mail</th>
-                            <th>Endereço</th>
-                            <th>CPF</th>
-                            <th>RG</th>
-
                             <th>Ações</th>
                             </thead>
                             <tbody>
-                            @foreach ($clientes as $cliente)
+                            @foreach ($atendentes as $atendente)
                                 <tr>
-                                    <td>{{$cliente->nome}}</td>
-                                    <td>{{$cliente->telefone}}</td>
-                                    <td>{{$cliente->sobrenome}}</td>
-                                    <td>{{$cliente->email}}</td>
-                                    <td>{{$cliente->endereco}}</td>
-                                    <td>{{$cliente->cpf}}</td>
-                                    <td>{{$cliente->rg}}</td>
+                                    <td>{{$atendente->nome}}</td>
+                                    <td>{{$atendente->telefone}}</td>
+                                    <td>{{$atendente->email}}</td>
+
                                     <td>
-                                        <a href="clientes/{{ $cliente->id}}/editar" class="btn btn-default btn-sm">Editar</a>
-                                        {!! Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' =>  'display: inline;']) !!}
-                                        <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
-                                        {!! Form::close() !!}
-                                        <button type="button" class="btn btn-default  btn-sm" data-toggle="modal" data-target="#exampleModal">Excluir</button>
+                                        <a href="{{route('atendentes.edit',['id'=>$atendente->id])}}"
+                                           class="btn-sm btn-success">Editar</a>
+                                        <a href="{{route('atendentes.destroy',['id'=>$atendente->id])}}"
+                                           class="btn-sm btn-danger">Remover</a>
+
                                     </td>
                                 </tr>
 
@@ -56,7 +47,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Deletar cliente: {{$cliente->nome}}</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Deletar atendente: {{$atendente->nome}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -67,7 +58,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
 
-                                                {!! Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' =>  'display: inline;']) !!}
+                                                {!! Form::open(['method' => 'DELETE', 'url' => '/atendentes/'.$atendente->id, 'style' =>  'display: inline;']) !!}
                                                 <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
                                                 {!! Form::close() !!}
                                             </div>

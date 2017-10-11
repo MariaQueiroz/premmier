@@ -6,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Atendentes
-                        <a class="pull-right" href="{{ url('atendentes/novo')}}">Novo Atendente</a>
+                        Clientes
+                        <a class="pull-right" href="{{ url('clientes/create')}}">Novo Cliente</a>
                     </div>
 
 
@@ -24,26 +24,28 @@
                             <thead>
                             <th>Nome</th>
                             <th>Telefone</th>
-                            <th>Sobrenome</th>
                             <th>E-mail</th>
-                            <th>Senha</th>
+                            <th>Endereço</th>
+                            <th>CPF</th>
+                            <th>RG</th>
+
                             <th>Ações</th>
                             </thead>
                             <tbody>
-                            @foreach ($atendentes as $atendente)
+                            @foreach ($clientes as $cliente)
                                 <tr>
-                                    <td>{{$atendente->nome}}</td>
-                                    <td>{{$atendente->telefone}}</td>
-                                    <td>{{$atendente->sobrenome}}</td>
-                                    <td>{{$atendente->email}}</td>
-                                    <td>{{$atendente->senha}}</td>
-                                  
+                                    <td>{{$cliente->nome}}</td>
+                                    <td>{{$cliente->telefone}}</td>
+                                    <td>{{$cliente->email}}</td>
+                                    <td>{{$cliente->endereco}}</td>
+                                    <td>{{$cliente->cpf}}</td>
+                                    <td>{{$cliente->rg}}</td>
                                     <td>
-                                        <a href="atendentes/{{ $atendente->id}}/editar" class="btn btn-default btn-sm">Editar</a>
-                                        {!! Form::open(['method' => 'DELETE', 'url' => '/atendentes/'.$atendente->id, 'style' =>  'display: inline;']) !!}
-                                        <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
-                                        {!! Form::close() !!}
-                                        <button type="button" class="btn btn-default  btn-sm" data-toggle="modal" data-target="#exampleModal">Excluir</button>
+                                        <a href="{{route('clientes.edit',['id'=>$cliente->id])}}"
+                                           class="btn-sm btn-success">Editar</a>
+                                        <a href="{{route('clientes.destroy',['id'=>$cliente->id])}}"
+                                           class="btn-sm btn-danger">Remover</a>
+
                                     </td>
                                 </tr>
 
@@ -51,7 +53,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Deletar atendente: {{$atendente->nome}}</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Deletar cliente: {{$cliente->nome}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -62,7 +64,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
 
-                                                {!! Form::open(['method' => 'DELETE', 'url' => '/atendentes/'.$atendente->id, 'style' =>  'display: inline;']) !!}
+                                                {!! Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' =>  'display: inline;']) !!}
                                                 <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
                                                 {!! Form::close() !!}
                                             </div>

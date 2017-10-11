@@ -1,8 +1,8 @@
-@extends ('app')
+@extends ('layouts.app')
 
 @section('content')
     <div class="container">
-        <h1>Nova Compra</h1>
+        <h1>Novo Atendente</h1>
         @if($errors->any())
             <ul class="alert alert-danger">
                 @foreach($errors->all() as $error)
@@ -11,25 +11,26 @@
             </ul>
         @endif
 
-        {!! Form::open(['route' => 'compra.store']) !!}
+        {!! Form::open(['route' => 'atendentes.store']) !!}
         <div class="form-group">
-            {!! Form::label('data','Data:') !!}
-            {!! Form::date('data','2017-05-18 ',['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('valor','Valor:') !!}
-            {!! Form::text('valor',null,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('contrato','Contrato:') !!}
-            {!! Form::text('contrato',null,['class'=>'form-control']) !!}
+            {!! Form::label('nome','Nome:') !!}
+            {!! Form::text('nome',null,['class'=>'form-control'])!!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('tipo','Tipo:') !!}
-            {!! Form::text('tipo',null,['class'=>'form-control']) !!}
+            {!! Form::label('telefone','Telefone:') !!}
+            {!! Form::text('telefone',null,['class'=>'form-control']) !!}
         </div>
 
+        <div class="form-group">
+            {!! Form::label('email','Email:') !!}
+            {!! Form::text('email',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('senha','Senha:') !!}
+            {!! Form::text('senha',null,['class'=>'form-control']) !!}
+        </div>
 
 
         <div class="form-group">

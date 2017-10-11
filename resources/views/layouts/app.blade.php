@@ -46,6 +46,17 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Cadastre-se</a></li>
                         @else
+
+                            {{--MENU DE ACESSO ÀS TABELAS--}}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acessos<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('clientes') }}">Clientes</a></li>
+                                    <li><a href="{{ url('/veiculos') }}">Veículos</a></li>
+                                    <li><a href="{{ url('/atendentes') }}">Atendentes</a></li>
+                                </ul>
+                            </li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -65,6 +76,7 @@
                                     </li>
                                 </ul>
                             </li>
+
                         @endguest
                     </ul>
                 </div>

@@ -8,7 +8,7 @@ class Atendente extends Model
 {
     protected $fillable = [
 
-            'nome','telefone','sobrenome','email','senha'
+            'nome','telefone','email','senha'
 
 
     ];

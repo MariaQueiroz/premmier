@@ -10,7 +10,7 @@
                 @endforeach
             </ul>
         @endif
-        {!! Form::open(['route' => ["cliente.edit", $cliente->id],'method'=>'put']) !!}
+        {!! Form::open(['route' => ["clientes.update", $cliente->id],'method'=>'put']) !!}
         <div class="form-group">
             {!! Form::label('nome','Nome:') !!}
             {!! Form::text('nome',$cliente->nome,['class'=>'form-control'])!!}
@@ -21,10 +21,7 @@
             {!! Form::text('telefone',$cliente->telefone,['class'=>'form-control'])!!}
         </div>
 
-        <div class="form-group">
-            {!! Form::label('sobrenome','Sobrenome:') !!}
-            {!! Form::text('sobrenome',$cliente->sobrenome,['class'=>'form-control'])!!}
-        </div>
+
 
         <div class="form-group">
             {!! Form::label('email','Email:') !!}
@@ -43,6 +40,10 @@
         <div class="form-group">
             {!! Form::label('rg','RG') !!}
             {!! Form::text('rg',$cliente->rg,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::submit('Salvar',['class'=>'btn btn-primary'])!!}
         </div>
 
         {!! Form::close() !!}

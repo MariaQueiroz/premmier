@@ -19,14 +19,15 @@ class Veiculo extends Model
         'quilometragem',
         'preco_a_vista',
         'preco_com_troca',
-        'ar condicionado',
+        'ar_condicionado',
         'direcao_hidraulica',
         'vidro_eletrico',
         'ar_quente',
         'trava_eletrica',
         'teto_solar',
         'air_bags',
-        'abs'
+        'abs',
+        'ano'
 
     ];
 

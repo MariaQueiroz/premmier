@@ -26,12 +26,12 @@ class VeiculoController extends Controller
 
     // retorna o array do objeto veiculo
     // return $veiculo;
-        return Redirect::to('veiculos/novo');
+        return redirect()->route('veiculos');
 
     }
     public function editar($id){
         $veiculo = Veiculo::findOrFail($id);
-        return view('veiculos.create', ['veiculo' => $veiculo]);
+        return view('veiculos.edit', ['veiculo' => $veiculo]);
     }
     public function atualizar($id, Request $request){
         $veiculo = Veiculo::findOrFail($id);
@@ -39,7 +39,7 @@ class VeiculoController extends Controller
 
         \Session::flash('mensagem_sucesso','Veiculo atualizado com sucesso!');
 
-        return Redirect::to('veiculos/'.$veiculo->id.'/editar');
+        return redirect()->route('veiculos');
 
     }
     public function deletar($id){
@@ -48,7 +48,7 @@ class VeiculoController extends Controller
 
         \Session::flash('mensagem_sucesso','Veiculo deletado com sucesso!');
 
-        return Redirect::to('veiculos');
+        return redirect()->route('veiculos');
 
     }
 }

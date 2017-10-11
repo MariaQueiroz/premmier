@@ -27,7 +27,7 @@ class VendaController extends Controller
 
     public function edit($id){
         $vendas = Venda::find($id);
-        return view('vendas.edit',compact('venda'));
+        return view('vendas.edit',compact('vendas'));
 
     }
 

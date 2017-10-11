@@ -19,9 +19,9 @@
                 <td>{{ $venda->contrato }}</td>
                 <td>{{ $venda->tipo }}</td>
                 <td>
-                    <a href="{{route('venda.edit',['id'=>$venda->id])}}"
+                    <a href="{{route('vendas',['id'=>$venda->id])}}"
                        class="btn-sm btn-success">Editar</a>
-                    <a href="{{route('venda.destroy',['id'=>$venda->id])}}"
+                    <a href="{{route('vendas',['id'=>$venda->id])}}"
                        class="btn-sm btn-danger">Remover</a>
 
                 </td>

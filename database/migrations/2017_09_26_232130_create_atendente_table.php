@@ -13,7 +13,7 @@ class CreateAtendenteTable extends Migration
      */
     public function up()
     {
-        Schema::create('atendente', function (Blueprint $table) {
+        Schema::create('atendentes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome',50);
             $table->string('sobrenome',50);
@@ -33,6 +33,6 @@ class CreateAtendenteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('atendente');
+        Schema::dropIfExists('atendentes');
     }
 }
