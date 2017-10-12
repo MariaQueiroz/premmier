@@ -6,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Marcas
-                        <a class="pull-right" href="{{ url('marcas/create')}}">Novo Marca</a>
+                        Modelos
+                        <a class="pull-right" href="{{ url('modelos/create')}}">Novo Modelo</a>
                     </div>
 
 
@@ -26,15 +26,15 @@
                             <th>Ações</th>
                             </thead>
                             <tbody>
-                            @foreach ($marcas as $marca)
+                            @foreach ($modelos as $modelo)
                                 <tr>
-                                    <td>{{$marca->nome}}</td>
-                                  
+                                    <td>{{$modelo->nome}}</td>
+
 
                                     <td>
-                                        <a href="{{route('marcas.edit',['id'=>$marca->id])}}"
+                                        <a href="{{route('modelos.edit',['id'=>$modelo->id])}}"
                                            class="btn-sm btn-success">Editar</a>
-                                        <a href="{{route('marcas.destroy',['id'=>$marca->id])}}"
+                                        <a href="{{route('modelos.destroy',['id'=>$modelo->id])}}"
                                            class="btn-sm btn-danger">Remover</a>
 
                                     </td>
@@ -44,7 +44,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Deletar marca: {{$marca->nome}}</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Deletar modelo: {{$modelo->nome}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -55,7 +55,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
 
-                                                {!! Form::open(['method' => 'DELETE', 'url' => '/marcas/'.$marca->id, 'style' =>  'display: inline;']) !!}
+                                                {!! Form::open(['method' => 'DELETE', 'url' => '/modelos/'.$modelo->id, 'style' =>  'display: inline;']) !!}
                                                 <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
                                                 {!! Form::close() !!}
                                             </div>

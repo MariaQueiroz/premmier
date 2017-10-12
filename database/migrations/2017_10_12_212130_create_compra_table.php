@@ -13,7 +13,7 @@ class CreateCompraTable extends Migration
      */
     public function up()
     {
-        Schema::create('vendas', function (Blueprint $table) {
+        Schema::create('compras', function (Blueprint $table) {
             $table->increments('id');
             $table->date('data');
             $table->string('valor',50);

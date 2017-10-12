@@ -4,13 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pedido extends Model
+class Modelo extends Model
 {
     protected $fillable = [
 
-            'valor'
+            'nome'
 
 
     ];
+
 
 }

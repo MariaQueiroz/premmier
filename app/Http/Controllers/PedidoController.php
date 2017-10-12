@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\Pedido;
+use App\Pedido;
 use App\Http\Requests\PedidoRequest;
+
 class PedidoController extends Controller
-
 {
-
     public function index(){
-        $pedidos = Pedido::get();
-        return view('pedidos.index', ['pedidos' => $pedidos]);
+        $pedido = Pedido::get();
+        return view('pedidos.index', ['pedidos' => $pedido]);
     }
     public function create(){
         return view('pedidos.create');
@@ -27,13 +26,16 @@ class PedidoController extends Controller
     }
 
     public function edit($id){
-        $pedidos = Pedido::find($id);
+        $pedido = Pedido::find($id);
         return view('pedidos.edit',compact('pedido'));
 
     }
 
     public function update(PedidoRequest $request,$id){
-        $pedidos = Pedido::find($id)->update($request->all());
+        $pedido = Pedido::find($id)->update($request->all());
         return redirect()->route('pedidos');
     }
+
+
+
 }

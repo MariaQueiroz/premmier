@@ -15,6 +15,8 @@ class CreateMarcaTable extends Migration
     {
         Schema::create('marcas', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('modelo_id')->usingned();
+            $table->foreign('modelo_id')->references('id')->on('modelos');
             $table->string('nome',50);
 
 

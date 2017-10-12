@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Editando Vendas:{{$venda->nome}}</h1>
+        <h1>Editando Vendas: {{$venda->nome}}</h1>
         @if($errors->any())
             <ul class="alert alert-danger">
                 @foreach($errors->all() as $error)
@@ -10,7 +10,7 @@
                 @endforeach
             </ul>
         @endif
-        {!! Form::open(['route' => ["vendas", $venda->id],'method'=>'put']) !!}
+        {!! Form::open(['route' => ["vendas.update", $venda->id],'method'=>'put']) !!}
         <div class="form-group">
             {!! Form::label('data','Data:') !!}
             {!! Form::date('nome',$data->data,['class'=>'form-control'])!!}
@@ -30,8 +30,9 @@
             {!! Form::text('tipo',$tipo->tipo,['class'=>'form-control']) !!}
         </div>
 
-
-
+        <div class="form-group">
+            {!! Form::submit('Salvar',['class'=>'btn btn-primary'])!!}
+        </div>
         {!! Form::close() !!}
 
 

@@ -3,51 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Modelo;
+use App\Http\Requests\ModeloRequest;
 
 class ModeloController extends Controller
 {
-
     public function index(){
-        $pedidos = Modelo::get();
-        return view('pedidos.index', ['pedidos' => $pedidos]);
+        $modelo = Modelo::get();
+        return view('modelos.index', ['modelos' => $modelo]);
     }
-    public function novo(){
-        return view('pedidos.create');
+    public function create(){
+        return view('modelos.create');
     }
-    // request para trabalhar com dados enviados via Post
-    public function salvar(Request $request){
-        // var_dump($request); // mostra os dados do request
-
-        $pedido = new Modelo();
-        $pedido = $pedido->create($request->all());
-
-        \Session::flash('mensagem_sucesso','Modelo cadastrado com sucesso!');
-
-        // retorna o array do objeto pedido
-        // return $pedido;
-        return Redirect::to('pedidos/novo');
-
+    public function store(ModeloRequest $request){
+        $novo_modelo = $request->all();
+        Modelo::create($novo_modelo);
+        return redirect()->route('modelos');
     }
-    public function editar($id){
-        $pedido = Modelo::findOrFail($id);
-        return view('pedidos.create', ['pedido' => $pedido]);
+    public function destroy($id){
+        Modelo::find($id)->delete();
+        return redirect()->route('modelos');
     }
-    public function atualizar($id, Request $request){
-        $pedido = Modelo::findOrFail($id);
-        $pedido->update($request->all());
 
-        \Session::flash('mensagem_sucesso','Modelo atualizado com sucesso!');
-
-        return Redirect::to('pedidos/'.$pedido->id.'/editar');
+    public function edit($id){
+        $modelo = Modelo::find($id);
+        return view('modelos.edit',compact('modelo'));
 
     }
-    public function deletar($id){
-        $pedido = Modelo::findOrFail($id);
-        $pedido->delete();
 
-        \Session::flash('mensagem_sucesso','Modelo deletado com sucesso!');
-
-        return Redirect::to('pedidos');
-
+    public function update(ModeloRequest $request,$id){
+        $modelo = Modelo::find($id)->update($request->all());
+        return redirect()->route('modelos');
     }
+
+
+
 }

@@ -1,4 +1,4 @@
-@extends ('app')
+@extends ('layouts.app')
 
 @section('content')
     <div class="container">
@@ -11,19 +11,23 @@
             </ul>
         @endif
 
-        {!! Form::open(['route' => 'fornecedores.store']) !!}
+        {!! Form::open(['route' => 'fornecedors.store']) !!}
         <div class="form-group">
             {!! Form::label('nome','Nome:') !!}
             {!! Form::text('nome',null,['class'=>'form-control'])!!}
         </div>
-        <div class="form-grou">
+
+        <div class="form-group">
             {!! Form::label('telefone','Telefone:') !!}
             {!! Form::text('telefone',null,['class'=>'form-control']) !!}
         </div>
+
         <div class="form-group">
-            {!! Form::label('endereco','Endereco:') !!}
+            {!! Form::label('endereco','Endereço:') !!}
             {!! Form::text('endereco',null,['class'=>'form-control']) !!}
         </div>
+
+
 
         <div class="form-group">
             {!! Form::submit('Salvar',['class'=>'btn btn-primary'])!!}

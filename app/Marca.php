@@ -12,5 +12,8 @@ class Marca extends Model
 
 
     ];
-
+    public function modelo()
+    {
+        return $this->hasOne('Modelo');
+    }
 }

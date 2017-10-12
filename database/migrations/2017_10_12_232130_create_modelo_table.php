@@ -13,9 +13,9 @@ class CreateModeloTable extends Migration
      */
     public function up()
     {
-        Schema::create('modelo', function (Blueprint $table) {
+        Schema::create('modelos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo',50);
+            $table->string('nome',50);
 
 
 
@@ -30,6 +30,6 @@ class CreateModeloTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modelo');
+        Schema::dropIfExists('modelos');
     }
 }

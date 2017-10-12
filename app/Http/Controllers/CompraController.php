@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Compra;
 use App\Http\Requests\CompraRequest;
+
 class CompraController extends Controller
 {
-
     public function index(){
-        $compras = Compra::get();
-        return view('compras.index', ['compras' => $compras]);
+        $compra = Compra::get();
+        return view('compras.index', ['compras' => $compra]);
     }
     public function create(){
         return view('compras.create');
@@ -26,16 +26,15 @@ class CompraController extends Controller
     }
 
     public function edit($id){
-        $compras = Compra::find($id);
-        return view('compras.edit',compact('compras'));
+        $compra = Compra::find($id);
+        return view('compras.edit',compact('compra'));
 
     }
 
     public function update(CompraRequest $request,$id){
-        $compras = Compra::find($id)->update($request->all());
+        $compra = Compra::find($id)->update($request->all());
         return redirect()->route('compras');
     }
-
 
 
 

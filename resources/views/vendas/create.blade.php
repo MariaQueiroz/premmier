@@ -1,4 +1,4 @@
-@extends ('app')
+@extends ('layouts.app')
 
 @section('content')
     <div class="container">
@@ -11,7 +11,7 @@
             </ul>
         @endif
 
-        {!! Form::open(['route' => 'vendas']) !!}
+        {!! Form::open(['route' => 'vendas.store']) !!}
         <div class="form-group">
             {!! Form::label('data','Data:') !!}
             {!! Form::date('data','2017-05-18 ',['class'=>'form-control']) !!}
@@ -29,7 +29,6 @@
             {!! Form::label('tipo','Tipo:') !!}
             {!! Form::text('tipo',null,['class'=>'form-control']) !!}
         </div>
-
 
 
         <div class="form-group">

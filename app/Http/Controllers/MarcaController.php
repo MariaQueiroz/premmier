@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Marca;
 use App\Http\Requests\MarcaRequest;
+
 class MarcaController extends Controller
 {
-
     public function index(){
-        $marcas = Marca::get();
-        return view('marcas.index', ['marcas' => $marcas]);
+        $marca = Marca::get();
+        return view('marcas.index', ['marcas' => $marca]);
     }
     public function create(){
         return view('marcas.create');
@@ -26,15 +26,17 @@ class MarcaController extends Controller
     }
 
     public function edit($id){
-        $marcas = Marca::find($id);
-        return view('marcas.edit',compact('marcas'));
+        $marca = Marca::find($id);
+        return view('marcas.edit',compact('marca'));
 
     }
 
     public function update(MarcaRequest $request,$id){
-        $marcas = Marca::find($id)->update($request->all());
+        $marca = Marca::find($id)->update($request->all());
         return redirect()->route('marcas');
     }
+
+
 
 }
 
