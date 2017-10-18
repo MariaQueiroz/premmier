@@ -14,12 +14,12 @@
         {!! Form::open(['route' => 'atendentes.store']) !!}
         <div class="form-group">
             {!! Form::label('nome','Nome:') !!}
-            {!! Form::text('nome',null,['class'=>'form-control'])!!}
+            {!! Form::text('nome',null,['class'=>'form-control','placeholder'=>'Nome Completo'])!!}
         </div>
 
         <div class="form-group">
             {!! Form::label('telefone','Telefone:') !!}
-            {!! Form::text('telefone',null,['class'=>'form-control']) !!}
+            {!! Form::text('telefone',null,['class'=>'form-control','','placeholder'=>'(__) _____-____']) !!}
         </div>
 
         <div class="form-group">

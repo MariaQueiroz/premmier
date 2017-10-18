@@ -12,12 +12,20 @@ class VendaController extends Controller
         $vendas = Venda::get();
         return view('vendas.index', ['vendas' => $vendas]);
     }
+    public function relatorio(){
+        $vendas = Venda::get();
+        return view('vendas.relatorio', ['vendas' => $vendas]);
+    }
     public function create(){
         return view('vendas.create');
     }
     public function store(VendaRequest $request){
         $novo_venda = $request->all();
         Venda::create($novo_venda);
+        $idVeiculo = $request->get('veiculo_id');
+        $veiculo = \App\Veiculo::find($idVeiculo);
+        $veiculo->status = 1;
+        $veiculo->save();
         return redirect()->route('vendas');
     }
     public function destroy($id){

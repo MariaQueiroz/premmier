@@ -19,7 +19,7 @@ class CreateVeiculosTable extends Migration
             $table->string('chassi',20);
             $table->string('renavan',10);
             $table->string('cor',15);
-            $table->integer('id_marca')->unsigned();
+            $table->integer('marca_id')->unsigned();
             $table->string('tipo',20);
             $table->string('quantidade_portas',5);
             $table->string('tipo_combustivel',20);
@@ -35,7 +35,7 @@ class CreateVeiculosTable extends Migration
             $table->string('teto_solar',20);
             $table->string('air_bags',20);
             $table->string('abs',20);
-            $table->foreign('id_marca')->references('id')->on('marca');
+            $table->foreign('marca_id')->references('id')->on('marca');
 
             $table->timestamps();
         });

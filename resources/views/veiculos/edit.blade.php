@@ -27,8 +27,20 @@
         {!! Form::label('cor', 'Cor') !!}
         {!! Form::input('text','cor',$veiculo->cor, ['class' => 'form-control','','placeholder'=>'Cor']) !!}
 
-        {!! Form::label('marcas', 'Marca') !!}
-        {!! Form::input('text','marca',$veiculo->marcas, ['class' => 'form-control','autofocus','placeholder'=>'Marca']) !!}
+        {!! Form::label('marca_id', 'Marca') !!}
+        {!! Form::select('marca_id',\App\Marca::orderBy("nome")->pluck('nome', 'id')->toArray(), $veiculo->marca_id, ['class' => 'form-control','autofocus']) !!}
+
+        {!! Form::label('modelo', 'Modelo') !!}
+        {!! Form::input('text', 'modelo', $veiculo->modelo, ['class' => 'form-control','autofocus','placeholder'=>'Modelo']) !!}
+
+        {!! Form::label('quilometregem', 'Quilometragem') !!}
+        {!! Form::input('text','Quilometragem',$veiculo->quilometragem, ['class' => 'form-control','','placeholder'=>'Quilometragem']) !!}
+
+        {!! Form::label('preco_a_vista', 'Preço a Vista') !!}
+        {!! Form::input('number','preco_a_vista',$veiculo->preco_a_vista, ['class' => 'form-control','','placeholder'=>'Preço a Vsita']) !!}
+
+        {!! Form::label('preco_com_troca', 'Preço com Troca') !!}
+        {!! Form::input('number','preco_com_troca',$veiculo->preco_com_troca, ['class' => 'form-control','','placeholder'=>'Preço com Troca']) !!}
 
         {!! Form::label('tipo', 'Tipo') !!}
         {!! Form::select('tipo',['carro_passeio' =>'Carro Passeio','antigo'=>'Antigo','utilitario'=>'Utilitário','suv'=>'SUV'],['class'=>'form-control']) !!}
@@ -42,15 +54,7 @@
         {!! Form::label('cambio', 'Câmbio') !!}
         {!! Form::select('cambio',['manual'=>'Manual','automatico'=>'Automático'], ['class' => 'form-control']) !!}
         <br>
-        {!! Form::label('quilometregem', 'Quilometragem') !!}
-        {!! Form::input('text','Quilometragem',$veiculo->quilometragem, ['class' => 'form-control','','placeholder'=>'Quilometragem']) !!}
 
-        {!! Form::label('preco_a_vista', 'Preço a Vista') !!}
-        {!! Form::input('number','preco_a_vista',$veiculo->preco_a_vista, ['class' => 'form-control','','placeholder'=>'Preço a Vsita']) !!}
-
-        {!! Form::label('preco_com_troca', 'Preço com Troca') !!}
-        {!! Form::input('number','preco_com_troca',$veiculo->preco_com_troca, ['class' => 'form-control','','placeholder'=>'Preço com Troca']) !!}
-        <br>
         {!! Form::label('ar_condicionado', 'Ar Condicionado') !!}
         {!! Form::select('ar_condicionado',['sim'=>'Sim','nao'=>'Não'], ['class' => 'form-control']) !!}
         <br>

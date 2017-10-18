@@ -13,10 +13,14 @@
 
         {!! Form::open(['route' => 'pedidos.store']) !!}
         <div class="form-group">
-            {!! Form::label('nome','Nome:') !!}
-            {!! Form::text('nome',null,['class'=>'form-control'])!!}
+            {!! Form::label('valor','Valor:') !!}
+            {!! Form::text('valor',null,['class'=>'form-control'])!!}
         </div>
 
+        <div class="form-group">
+            {!! Form::label('descricao','Descricao:') !!}
+            {!! Form::text('descricao',null,['class'=>'form-control'])!!}
+        </div>
 
 
         <div class="form-group">

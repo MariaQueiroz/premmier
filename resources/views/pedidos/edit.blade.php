@@ -12,10 +12,15 @@
         @endif
         {!! Form::open(['route' => ["pedidos.update", $pedido->id],'method'=>'put']) !!}
         <div class="form-group">
-            {!! Form::label('nome','Nome:') !!}
-            {!! Form::text('nome',$pedido->nome,['class'=>'form-control'])!!}
+            {!! Form::label('valor','Valor:') !!}
+            {!! Form::text('valor',$pedido->valor,['class'=>'form-control'])!!}
 
-        <div class="form-group">
+            <div class="form-group">
+                {!! Form::label('descricao','Descição:') !!}
+                {!! Form::text('descricao',$pedido->descricao,['class'=>'form-control'])!!}
+
+
+                <div class="form-group">
             {!! Form::submit('Salvar',['class'=>'btn btn-primary'])!!}
         </div>
         {!! Form::close() !!}

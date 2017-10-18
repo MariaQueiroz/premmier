@@ -8,7 +8,7 @@ class Pedido extends Model
 {
     protected $fillable = [
 
-            'valor'
+            'valor','descricao'
 
 
     ];

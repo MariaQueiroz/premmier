@@ -9,9 +9,10 @@ use App\Veiculo;
 class VeiculoController extends Controller
 {
     public function index(){
-        $veiculos = Veiculo::get();
+        $veiculos = Veiculo::get()->where('status', '=', '0');
         return view('veiculos.index', ['veiculos' => $veiculos]);
     }
+
     public function novo(){
         return view('veiculos.create');
     }

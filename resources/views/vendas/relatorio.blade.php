@@ -6,19 +6,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Vendas
-                        <a class="pull-right" href="{{ url('vendas/create')}}">Nova Venda</a>
+                        Relatorio de Vendas
                     </div>
 
 
                     <div class="panel-body">
-                        @if (Session::has('mensagem_sucesso'))
-                            <div class="alert alert-success alert-dismissable">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                                <strong>Sucesso!</strong> {{ Session::get('mensagem_sucesso') }}
-                            </div>
-                        @endif
-
 
                         <table class="table">
                             <thead>
@@ -26,7 +18,6 @@
                             <th>Valor</th>
                             <th>Cliente</th>
                             <th>Veículo</th>
-                            <th>Ações</th>
                             </thead>
                             <tbody>
                             @foreach ($vendas as $venda)
@@ -35,12 +26,6 @@
                                     <td>{{$venda->valor}}</td>
                                     <td>{{$venda->cliente->nome}}</td>
                                     <td>{{$venda->veiculo->modelo}}</td>
-
-                                    <td>
-                                        <a href="{{route('vendas.destroy',['id'=>$venda->id])}}"
-                                           class="btn-sm btn-danger">Remover</a>
-
-                                    </td>
                                 </tr>
 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

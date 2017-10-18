@@ -11,7 +11,7 @@ class Veiculo extends Model
         'chassi',
         'renavan',
         'cor',
-        'id_marca',
+        'marca_id',
         'tipo',
         'quantidade_portas',
         'tipo_combustivel',
@@ -26,9 +26,19 @@ class Veiculo extends Model
         'trava_eletrica',
         'teto_solar',
         'air_bags',
+        'modelo',
         'abs',
+        'status', // se for 0 está a venda; se for 1 está vendido
         'ano'
-
     ];
 
+
+    public function marca() {
+        return $this->belongsTo('App\Marca');
+    }
+
+    public function venda()
+    {
+        return $this->hayOne('App\Venda');
+    }
 }

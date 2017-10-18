@@ -32,7 +32,7 @@
                             <tbody>
                             <tr>
                                 @foreach ($veiculos as $veiculo)
-                                    <td>{{$veiculo->marca}}</td>
+                                    <td>{{$veiculo->marca->nome}}</td>
                                     <td>{{$veiculo->modelo}}</td>
                                     <td>{{$veiculo->ano}}</td>
                                     <td>{{$veiculo->placa}}</td>

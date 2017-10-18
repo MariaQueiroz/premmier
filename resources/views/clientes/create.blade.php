@@ -22,7 +22,7 @@
                                     {!! Form::open(['route' => 'clientes.store']) !!}
                                     <div class="form-group">
                                         {!! Form::label('nome','Nome:') !!}
-                                        {!! Form::text('nome',null,['class'=>'form-control'])!!}
+                                        {!! Form::text('nome',null,['class'=>'form-control','','placeholder'=>'Nome Completo'])!!}
                                     </div>
                                     <div class="form-grou">
                                         {!! Form::label('telefone','Telefone:') !!}

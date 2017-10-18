@@ -42,8 +42,20 @@
                         {!! Form::label('cor', 'Cor') !!}
                         {!! Form::input('text','cor',null, ['class' => 'form-control','','placeholder'=>'Cor']) !!}
 
-                        {!! Form::label('marcas', 'Marca') !!}
-                        {!! Form::input('text','marca',null, ['class' => 'form-control','autofocus','placeholder'=>'Marca']) !!}
+                        {!! Form::label('marca_id', 'Marca') !!}
+                        {!! Form::select('marca_id',\App\Marca::orderBy("nome")->pluck('nome', 'id')->toArray(), null, ['class' => 'form-control','autofocus']) !!}
+
+                        {!! Form::label('modelo', 'Modelo') !!}
+                        {!! Form::input('text', 'modelo', null, ['class' => 'form-control','autofocus','placeholder'=>'Modelo']) !!}
+
+                        {!! Form::label('quilometregem', 'Quilometragem') !!}
+                        {!! Form::input('text','Quilometragem',null, ['class' => 'form-control','','placeholder'=>'Quilometragem']) !!}
+
+                        {!! Form::label('preco_a_vista', 'Preço a Vista') !!}
+                        {!! Form::input('number','preco_a_vista',null, ['class' => 'form-control','','placeholder'=>'Preço a Vsita']) !!}
+
+                        {!! Form::label('preco_com_troca', 'Preço com Troca') !!}
+                        {!! Form::input('number','preco_com_troca',null, ['class' => 'form-control','','placeholder'=>'Preço com Troca']) !!}
 
                         {!! Form::label('tipo', 'Tipo') !!}
                         {!! Form::select('tipo',['carro_passeio' =>'Carro Passeio','antigo'=>'Antigo','utilitario'=>'Utilitário','suv'=>'SUV'],['class'=>'form-control']) !!}
@@ -57,15 +69,7 @@
                         {!! Form::label('cambio', 'Câmbio') !!}
                         {!! Form::select('cambio',['manual'=>'Manual','automatico'=>'Automático'], ['class' => 'form-control']) !!}
                         <br>
-                        {!! Form::label('quilometregem', 'Quilometragem') !!}
-                        {!! Form::input('text','Quilometragem',null, ['class' => 'form-control','','placeholder'=>'Quilometragem']) !!}
 
-                        {!! Form::label('preco_a_vista', 'Preço a Vista') !!}
-                        {!! Form::input('number','preco_a_vista',null, ['class' => 'form-control','','placeholder'=>'Preço a Vsita']) !!}
-
-                        {!! Form::label('preco_com_troca', 'Preço com Troca') !!}
-                        {!! Form::input('number','preco_com_troca',null, ['class' => 'form-control','','placeholder'=>'Preço com Troca']) !!}
-                        <br>
                         {!! Form::label('ar_condicionado', 'Ar Condicionado') !!}
                         {!! Form::select('ar_condicionado',['sim'=>'Sim','nao'=>'Não'], ['class' => 'form-control']) !!}
                         <br>

@@ -7,13 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Marca extends Model
 {
     protected $fillable = [
-
             'nome'
-
-
     ];
-    public function modelo()
+
+    public function veiculos()
     {
-        return $this->hasOne('Modelo');
+        return $this->hayMany('App\Veiculo');
     }
 }

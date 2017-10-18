@@ -16,7 +16,7 @@ class CreatePedidoTable extends Migration
         Schema::create('pedido', function (Blueprint $table) {
             $table->increments('id');
             $table->string('valor',50);
-          
+            $table->string('descricao',300);
 
 
             $table->timestamps();

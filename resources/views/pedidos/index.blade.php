@@ -22,14 +22,15 @@
 
                         <table class="table">
                             <thead>
-                            <th>Nome</th>
+                            <th>Valor</th>
+                            <th>Descrição</th>
                             <th>Ações</th>
                             </thead>
                             <tbody>
                             @foreach ($pedidos as $pedido)
                                 <tr>
-                                    <td>{{$pedido->nome}}</td>
-
+                                    <td>{{$pedido->valor}}</td>
+                                    <td>{{$pedido->descricao}}</td>
 
                                     <td>
                                         <a href="{{route('pedidos.edit',['id'=>$pedido->id])}}"

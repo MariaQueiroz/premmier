@@ -33,8 +33,8 @@
                                 <tr>
                                     <td>{{$compra->data}}</td>
                                     <td>{{$compra->valor}}</td>
-                                    <td>{{$compra->telefone}}</td>
-                                    
+                                    <td>{{$compra->contrato}}</td>
+                                    <td>{{$compra->tipo}}</td>
                                     
                                   
                                     <td>
@@ -43,6 +43,12 @@
                                         <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
                                         {!! Form::close() !!}
                                         <button type="button" class="btn btn-default  btn-sm" data-toggle="modal" data-target="#exampleModal">Excluir</button>
+
+
+
+
+
+
                                     </td>
                                 </tr>
 

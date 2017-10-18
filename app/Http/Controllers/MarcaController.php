@@ -21,8 +21,12 @@ class MarcaController extends Controller
         return redirect()->route('marcas');
     }
     public function destroy($id){
-        Marca::find($id)->delete();
-        return redirect()->route('marcas');
+        try {
+            Marca::find($id)->delete();
+            return redirect()->route('marcas');
+        } catch (\Exception $e) {
+            return redirect()->route('marcas');
+        }
     }
 
     public function edit($id){
