@@ -25,6 +25,7 @@
                             <th>Valor</th>
                             <th>Cliente</th>
                             <th>Modelo Desejado</th>
+                            <th>Data</th>
                             <th>Descrição</th>
                             <th>Ações</th>
                             </thead>
@@ -34,7 +35,9 @@
                                     <td>{{$pedido->valor}}</td>
                                     <td>{{$pedido->cliente->nome}}</td>
                                     <td>{{$pedido->modelo}}</td>
+                                    <td>{{$pedido->data}}</td>
                                     <td>{{$pedido->descricao}}</td>
+
 
                                     <td>
                                         <a href="{{route('pedidos.edit',['id'=>$pedido->id])}}"

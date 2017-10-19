@@ -11,7 +11,7 @@
             </ul>
         @endif
 
-        {!! Form::open(['route' => 'compras']) !!}
+        {!! Form::open(['route' => 'compras.store']) !!}
         <div class="form-group">
             {!! Form::label('data','Data:') !!}
             {!! Form::date('data','2017-05-18 ',['class'=>'form-control']) !!}

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Compras
@@ -36,22 +36,14 @@
                                     <td>{{$compra->fornecedor->nome}}</td>
                                     <td>{{$compra->veiculo->modelo}}</td>
 
-
-                                  
                                     <td>
-                                        <a href="compra/{{ $compra->id}}/editar" class="btn btn-default btn-sm">Editar</a>
-                                        {!! Form::open(['method' => 'DELETE', 'url' => '/compras/'.$compra->id, 'style' =>  'display: inline;']) !!}
-                                        <button type="submit" class="btn btn-danger btn-sm" >Confirmar</button>
-                                        {!! Form::close() !!}
-                                        <button type="button" class="btn btn-default  btn-sm" data-toggle="modal" data-target="#exampleModal">Excluir</button>
 
-
-
-
-
+                                        <a href="{{route('compras.destroy',['id'=>$compra->id])}}"
+                                           class="btn-sm btn-danger">Remover</a>
 
                                     </td>
                                 </tr>
+
 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">

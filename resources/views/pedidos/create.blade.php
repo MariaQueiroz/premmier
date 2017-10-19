@@ -21,7 +21,12 @@
         {!! Form::select('cliente_id',\App\Cliente::orderBy("nome")->pluck('nome', 'id')->toArray(), null, ['class' => 'form-control','autofocus']) !!}
 
         {!! Form::label('modelo', 'Modelo') !!}
-        {!! Form::select('modelo', null, ['class' => 'form-control','autofocus']) !!}
+        {!! Form::text('modelo', null, ['class' => 'form-control','autofocus']) !!}
+
+        <div class="form-group">
+            {!! Form::label('data','Data:') !!}
+            {!! Form::date('data','2017-05-18 ',['class'=>'form-control']) !!}
+        </div>
 
 
         <div class="form-group">

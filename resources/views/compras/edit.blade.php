@@ -21,14 +21,21 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('contrato','Contrato:') !!}
-            {!! Form::text('contrato',$contrato->contrato,['class'=>'form-control'])!!}
+            {!! Form::label('compra_id','Compra:') !!}
+            {!! Form::select('compra_id',\App\Compra::orderBy("nome")->pluck('nome', 'id')->toArray(), null,['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('tipo','Tipo') !!}
-            {!! Form::text('tipo',$tipo->tipo,['class'=>'form-control']) !!}
+            {!! Form::label('veiculo_id','Veículo:') !!}
+            {!! Form::select('veiculo_id',\App\Veiculo::orderBy("modelo")->pluck('modelo', 'id')->toArray(), null,['class'=>'form-control']) !!}
         </div>
+
+        <div class="form-group">
+            {!! Form::label('forma_pgto','Forma de Pagamemto:') !!}
+            {!! Form::select('forma_pgto',['a vista'=>'A Vista','a prazo'=>'A Prazo'],null,['class'=>'form-control']) !!}
+        </div>
+
+
 
 
 

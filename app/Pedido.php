@@ -8,19 +8,14 @@ class Pedido extends Model
 {
     protected $fillable = [
 
-            'valor','cliente_id','veiculo_id'
+            'valor','cliente_id','modelo','data','descricao'
 
 
     ];
-    public function veiculo()
-    {
-        return $this->hayOne('App\veiculo');
-    }
-
 
     public function cliente()
     {
-        return $this->hayMany('App\Cliente');
+        return $this->belongsTo('App\Cliente');
     }
 }
 

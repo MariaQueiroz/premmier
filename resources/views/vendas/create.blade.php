@@ -27,7 +27,7 @@
 
         <div class="form-group">
             {!! Form::label('veiculo_id','Veículo:') !!}
-            {!! Form::select('veiculo_id',\App\Veiculo::orderBy("modelo")->pluck('modelo', 'id')->toArray(), null,['class'=>'form-control']) !!}
+            {!! Form::select('veiculo_id',\App\Veiculo::where('status', '=', '0')->orderBy("modelo")->pluck('modelo', 'id')->toArray(), null,['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
