@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('{id}/edit', ['as' => 'fornecedors.edit', 'uses' => 'FornecedorController@edit']);
         Route::put('{id}/update', ['as' => 'fornecedors.update', 'uses' => 'FornecedorController@update']);
         Route::post('store', ['as' => 'fornecedors.store', 'uses' => 'FornecedorController@store']);
+        Route::get('relatorio', ['as' => 'fornecedors.relatorio', 'uses' => 'FornecedorController@relatorio']);
     });
 
     Route::group(['prefix' => 'clientes', 'where' => ['id' => '[0-9]+']], function () {

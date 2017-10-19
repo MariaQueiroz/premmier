@@ -23,6 +23,8 @@
                         <table class="table">
                             <thead>
                             <th>Valor</th>
+                            <th>Cliente</th>
+                            <th>Modelo Desejado</th>
                             <th>Descrição</th>
                             <th>Ações</th>
                             </thead>
@@ -30,6 +32,8 @@
                             @foreach ($pedidos as $pedido)
                                 <tr>
                                     <td>{{$pedido->valor}}</td>
+                                    <td>{{$pedido->cliente->nome}}</td>
+                                    <td>{{$pedido->modelo}}</td>
                                     <td>{{$pedido->descricao}}</td>
 
                                     <td>

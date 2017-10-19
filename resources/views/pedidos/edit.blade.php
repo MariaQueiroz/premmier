@@ -15,6 +15,13 @@
             {!! Form::label('valor','Valor:') !!}
             {!! Form::text('valor',$pedido->valor,['class'=>'form-control'])!!}
 
+            {!! Form::label('cliente_id', 'Cliente') !!}
+            {!! Form::select('cliente_id',\App\Cliente::orderBy("nome")->pluck('nome', 'id')->toArray(), $pedido->cliente_id, ['class' => 'form-control','autofocus']) !!}
+
+            {!! Form::label('veiculo_id', 'Cliente') !!}
+            {!! Form::select('veiculo_id',\App\Veiculo::orderBy("modelo")->pluck('modelo', 'id')->toArray(), $pedido->veiculo_id, ['class' => 'form-control','autofocus']) !!}
+
+
             <div class="form-group">
                 {!! Form::label('descricao','Descição:') !!}
                 {!! Form::text('descricao',$pedido->descricao,['class'=>'form-control'])!!}

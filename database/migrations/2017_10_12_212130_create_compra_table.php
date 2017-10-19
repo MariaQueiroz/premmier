@@ -17,10 +17,11 @@ class CreateCompraTable extends Migration
             $table->increments('id');
             $table->date('data');
             $table->string('valor',50);
-            $table->string('contrato',50);
-            $table->string('tipo',50);
-
-
+            $table->string('veiculo_id',50)->unsigned();;
+            $table->string('fornecedor_id',50)->unsigned();;
+            
+            $table->foreign('veiculo_id')->references('id')->on('veiculo');
+            $table->foreign('fornecedor_id')->references('id')->on('fornecedor');
             $table->timestamps();
         });
     }

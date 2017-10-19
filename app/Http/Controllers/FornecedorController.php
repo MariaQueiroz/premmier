@@ -11,6 +11,11 @@ class FornecedorController extends Controller
         $fornecedor = Fornecedor::get();
         return view('fornecedors.index', ['fornecedors' => $fornecedor]);
     }
+    public function relatorio(){
+        $fornecedor = Fornecedor::get();
+        return view('fornecedors.relatorio',['fornecedors' => $fornecedor]);
+    }
+
     public function create(){
         return view('fornecedors.create');
     }

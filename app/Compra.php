@@ -8,9 +8,16 @@ class Compra extends Model
 {
     protected $fillable = [
 
-            'data','valor','contrato','tipo'
+            'data','valor','fornecedor_id','veiculo_id'
 
 
     ];
+    public function fornecedor() {
+        return $this->belongsTo('App\Fornecedor');
+    }
 
+    public function veiculo() {
+        return $this->belongsTo('App\Veiculo');
+    }
 }
+

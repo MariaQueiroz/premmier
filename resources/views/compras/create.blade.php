@@ -19,20 +19,25 @@
         <div class="form-group">
             {!! Form::label('valor','Valor:') !!}
             {!! Form::text('valor',null,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('contrato','Contrato:') !!}
-            {!! Form::text('contrato',null,['class'=>'form-control']) !!}
-        </div>
 
         <div class="form-group">
-            {!! Form::label('tipo','Tipo:') !!}
-            {!! Form::text('tipo',null,['class'=>'form-control']) !!}
+            {!! Form::label('fornecedor_id','Fornecedor:') !!}
+            {!! Form::select('fornecedor_id',\App\Fornecedor::orderBy("nome")->pluck('nome', 'id')->toArray(), null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('veiculo_id','Veículo:') !!}
+            {!! Form::select('veiculo_id',\App\Veiculo::orderBy("modelo")->pluck('modelo', 'id')->toArray(), null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('forma_pgto','Forma de Pagamemto:') !!}
+            {!! Form::select('forma_pgto',['a vista'=>'A Vista','a prazo'=>'A Prazo'],null,['class'=>'form-control']) !!}
         </div>
 
 
 
-        <div class="form-group">
+            <div class="form-group">
             {!! Form::submit('Salvar',['class'=>'btn btn-primary'])!!}
 
         </div>
