@@ -36,12 +36,12 @@
 
                                     <div class="form-group">
                                         {!! Form::label('endereco','Endereco:') !!}
-                                        {!! Form::text('endereco',null,['class'=>'form-control']) !!}
+                                        {!! Form::text('endereco',null,['class'=>'form-control','','placeholder'=>'Endereço Completo']) !!}
                                     </div>
 
                                     <div class="form-group">
                                         {!! Form::label('cpf','CPF:') !!}
-                                        {!! Form::text('cpf',null,['class'=>'form-control']) !!}
+                                        {!! Form::text('cpf',null,['class'=>'form-control','','placeholder'=>'_ _ _._ _ _._ _ _-_ _']) !!}
                                     </div>
 
                                     <div class="form-group">

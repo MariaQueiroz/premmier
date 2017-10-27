@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Bem Vindo Colaborador!</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -14,7 +14,21 @@
                         </div>
                     @endif
 
-                    You are logged utfutfuyf
+                        <table class="table">
+                            <thead>
+                            <th>Cliente</th>
+                            <th>Modelo Desejado</th>
+                            </thead>
+                        @foreach ($pedidos as $pedido)
+                                <td>{{$pedido->cliente->nome}}</td>
+                                <td>{{$pedido->modelo}}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+
+
+
+
                 </div>
             </div>
         </div>

@@ -12,6 +12,14 @@ class PedidoController extends Controller
         $pedido = Pedido::get();
         return view('pedidos.index', ['pedidos' => $pedido]);
     }
+
+    public function veiculosParaPedidos(){
+        $pedido = Pedido::where('status', '=', '0')
+                        ->join('veiculos', 'pedidos.modelo', '=', 'veiculos.modelo')
+                        ->get();
+        return view('home', ['pedidos' => $pedido]);
+    }
+
     public function create(){
         return view('pedidos.create');
     }

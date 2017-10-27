@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image: url("/header.jpg");
+                color: white;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -59,8 +59,15 @@
                 text-transform: uppercase;
             }
 
+            .titlem-b-md {
+                font-size: 84px;
+                font-weight: 100;
+            }
+
             .m-b-md {
-                margin-bottom: 30px;
+                margin-top: 50px;
+                font-size: 20px;
+                font-weight: 600;
             }
         </style>
     </head>
@@ -69,21 +76,26 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                     <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}"></a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="titlem-b-md">
                     Premmier Veículos
                 </div>
                 <div class="content">
                     <div class="  m-b-md">
                         O carro que você procura a Premmier tem!
+
+                    </div>
+                    <div class="top-right links">
+
+
 
                     </div>
                 </div>

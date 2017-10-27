@@ -17,7 +17,8 @@ Route::get('/', function () {
 Route::get('premmier','CarroControler@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PedidoController@veiculosParaPedidos')->name('home');
+Route::get('/veiculosParaPedidos','HomeController@');
 
 Route::group(['middleware' => 'auth'], function() {
 
@@ -66,6 +67,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::put('{id}/update', ['as' => 'atendentes.update', 'uses' => 'AtendenteController@update']);
         Route::post('store', ['as' => 'atendentes.store', 'uses' => 'AtendenteController@store']);
     });
+
+
+
 
     Route::group(['prefix' => 'vendas', 'where' => ['id' => '[0-9]+']], function () {
         Route::get('', ['as' => 'vendas', 'uses' => 'VendaController@index']);

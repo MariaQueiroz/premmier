@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Marcas
-                        <a class="pull-right" href="{{ url('marcas/create')}}">Novo Marca</a>
+                        <a class="pull-right" href="{{ url('marcas/create')}}">Nova Marca</a>
                     </div>
 
 

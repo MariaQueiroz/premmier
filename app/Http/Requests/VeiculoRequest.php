@@ -24,7 +24,8 @@ class VeiculoRequest extends FormRequest
     public function rules()
     {
         return [
-            'renavan'=>'required|min:9|max:10'
+            'renavan'=>'required|min:9|max:10',
+            'placa'=>'required|min:6|max:8'
         ];
     }
 }
