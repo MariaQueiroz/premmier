@@ -27,9 +27,8 @@
 
         <div class="form-group">
             {!! Form::label('veiculo_id','Veículo:') !!}
-            {!! Form::select('veiculo_id',\App\Veiculo::where('status', '=', '0')->orderBy("modelo")->pluck('modelo', 'id')->toArray(), null,['class'=>'form-control']) !!}
+            {!! Form::select('veiculo_id',\App\Veiculo::select(DB::raw("CONCAT(modelo,' (Placa: ',placa, ')') AS mp"),'id')->where('status', '=', '0')->orderBy("modelo")->pluck('mp', 'id')->toArray(), null,['class'=>'form-control']) !!}
         </div>
-
         <div class="form-group">
             {!! Form::label('forma_pgto','Forma de Pagamemto:') !!}
             {!! Form::select('forma_pgto',['a vista'=>'A Vista','a prazo'=>'A Prazo'],null,['class'=>'form-control']) !!}

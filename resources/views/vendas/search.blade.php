@@ -19,6 +19,7 @@
                             </div>
                         @endif
 
+
                             {!! Form::open(['route' => ["vendas.search"],'method'=>'post']) !!}
                             <div class="form-group">
                                 {!! Form::label('data','Data Inicial da Venda:') !!}
@@ -29,13 +30,14 @@
                                 {!! Form::label('data','Data Final:') !!}
                                 {!! Form::date('dataFinal',"",['class'=>'form-control'])!!}
                             </div>
+
                             <div class="form-group">
                                 {!! Form::submit('Pesquisar',['class'=>'btn btn-primary'])!!}
                             </div>
 
                             {!! Form::close() !!}
 
-                        <table class="table">
+                            <table class="table">
                             <thead>
                             <th>Data</th>
                             <th>Valor</th>

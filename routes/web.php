@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('{id}/edit', ['as' => 'veiculos.edit', 'uses' => 'VeiculoController@editar']);
         Route::put('{id}/update', ['as' => 'veiculos.update', 'uses' => 'VeiculoController@atualizar']);
         Route::post('store', ['as' => 'veiculos.store', 'uses' => 'VeiculoController@salvar']);
+        Route::post('search', ['as' => 'veiculos.search', 'uses' => 'VeiculoController@search']);
     });
 
     Route::group(['prefix' => 'marcas', 'where' => ['id' => '[0-9]+']], function () {
@@ -79,6 +80,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::put('{id}/update', ['as' => 'vendas.update', 'uses' => 'VendaController@update']);
         Route::post('store', ['as' => 'vendas.store', 'uses' => 'VendaController@store']);
         Route::get('relatorio', ['as' => 'vendas.relatorio', 'uses' => 'VendaController@relatorio']);
+        Route::post('search', ['as' => 'vendas.search', 'uses' => 'VendaController@search']);
     });
 
     Route::group(['prefix' => 'compras', 'where' => ['id' => '[0-9]+']], function () {

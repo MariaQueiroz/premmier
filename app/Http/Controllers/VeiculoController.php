@@ -34,6 +34,15 @@ class VeiculoController extends Controller
         $veiculo = Veiculo::findOrFail($id);
         return view('veiculos.edit', ['veiculo' => $veiculo]);
     }
+    public function search( Request $request){
+        if($request->input('placa') != ""){
+            $veiculo = Veiculo::where('placa',"like" ,'%'.$request->input('placa').'%')->get();
+        }else{
+            $veiculo = Veiculo::get()->where('status', '=', '0');
+        }
+        return view('veiculos.search', ['veiculos' => $veiculo]);
+    }
+
     public function atualizar($id, Request $request){
         $veiculo = Veiculo::findOrFail($id);
         $veiculo->update($request->all());

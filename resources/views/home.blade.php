@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Bem Vindo Colaborador!</div>
+                <div class="panel-heading">Bem Vinda(o) {{ Auth::user()->name }}!</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -18,10 +18,12 @@
                             <thead>
                             <th>Cliente</th>
                             <th>Modelo Desejado</th>
+                            <th>Telefone</th>
                             </thead>
                         @foreach ($pedidos as $pedido)
                                 <td>{{$pedido->cliente->nome}}</td>
                                 <td>{{$pedido->modelo}}</td>
+                                <td>{{$pedido->cliente->telefone}}</td>
                                 </tr>
                             @endforeach
                         </table>

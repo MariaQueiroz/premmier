@@ -19,6 +19,17 @@ class VendaController extends Controller
     public function create(){
         return view('vendas.create');
     }
+
+    public function search( Request $request){
+        if($request->input('dataInicial') != "" && $request->input('dataFinal') != ""){
+            $venda = Venda::whereBetween('data',array($request->input('dataInicial'),array($request->input('dataFinal'))))->get();
+        }else{
+            $venda = Venda::get()->where('status', '=', '0');
+        }
+        return view('vendas.search', ['vendas' => $venda]);
+    }
+
+
     public function store(VendaRequest $request){
         $novo_venda = $request->all();
         Venda::create($novo_venda);

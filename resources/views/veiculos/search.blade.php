@@ -18,16 +18,16 @@
                                 <strong>Sucesso!</strong> {{ Session::get('mensagem_sucesso') }}
                             </div>
                         @endif
-                            {!! Form::open(['route' => ["veiculos.search"],'method'=>'post']) !!}
+                        {!! Form::open(['route' => ["veiculos.search"],'method'=>'post']) !!}
 
-                            {!! Form::label('placa', 'Pesquisa de Veículos por Placa') !!}
-                            {!! Form::input('text','placa',"", ['class' => 'form-control','','placeholder'=>'informe a placa do veículo']) !!}
+                        {!! Form::label('placa', 'Placa') !!}
+                        {!! Form::input('text','placa',"", ['class' => 'form-control','','placeholder'=>'Placa']) !!}
 
-                            <div class="form-group">
-                                {!! Form::submit('Pesquisar',['class'=>'btn btn-primary'])!!}
-                            </div>
+                        <div class="form-group">
+                            {!! Form::submit('Pesquisar',['class'=>'btn btn-primary'])!!}
+                        </div>
 
-                            {!! Form::close() !!}
+                        {!! Form::close() !!}
 
 
                         <table class="table">
