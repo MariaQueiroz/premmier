@@ -12,7 +12,7 @@
 
                     <div class="panel-body">
 
-                        <table class="table">
+                        <table id="tabela_relatorio" class="table">
                             <thead>
                             <th>Data</th>
                             <th>Valor</th>

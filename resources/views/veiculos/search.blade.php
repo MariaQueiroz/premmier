@@ -29,7 +29,12 @@
 
                         {!! Form::close() !!}
 
-
+                        <?php if(count($veiculos)==0){ ?>
+                            <div class="alert alert-danger alert-dismissable">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                <strong>Placa não cadastrada!</strong> {{ Session::get('mensagem_erro') }}
+                            </div>
+                        <?php }else { ?>
                         <table class="table">
                             <thead>
                             <th>Marca</th>
@@ -83,7 +88,7 @@
                             @endforeach
                             </tbody>
                         </table>
-
+                        <?php } ?>
                         <!-- Button trigger modal -->
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                       Launch demo modal

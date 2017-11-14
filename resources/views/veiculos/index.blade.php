@@ -30,7 +30,7 @@
                             {!! Form::close() !!}
 
 
-                        <table class="table">
+                        <table id="tabela_veiculo" class="table">
                             <thead>
                             <th>Marca</th>
                             <th>Modelo</th>
@@ -98,4 +98,5 @@
             </div>
         </div>
     </div>
+
 @endsection
