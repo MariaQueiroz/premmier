@@ -21,11 +21,19 @@ class MarcaController extends Controller
         return redirect()->route('marcas');
     }
     public function destroy($id){
+
         try {
             Marca::find($id)->delete();
             return redirect()->route('marcas');
         } catch (\Exception $e) {
+            \Session::flash('mensagem_nao_deleta','Marca não pode ser deletada!');
             return redirect()->route('marcas');
+            //if($e->getCode() == "23000"){ //23000 is sql code for integrity constraint violation
+                // return error to user here
+               // \Session::flash('mensagem_nao_deleta','Marca não pode ser deletada!');
+               // return redirect()->route('marcas');
+          //  }
+
         }
     }
 

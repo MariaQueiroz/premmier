@@ -12,7 +12,7 @@
 
                     <div class="panel-body">
 
-                        <table id="tabela_fornecedor" class="table">
+                        <table class="table">
                             <thead>
                             <th>Nome</th>
                             <th>Telefone</th>

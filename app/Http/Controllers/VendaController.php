@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Venda;
 use App\Http\Requests\VendaRequest;
+
 class VendaController extends Controller
 {
 

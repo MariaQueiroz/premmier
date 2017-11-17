@@ -36,7 +36,8 @@ class VeiculoController extends Controller
     }
     public function search( Request $request){
         if($request->input('placa') != ""){
-            $veiculo = Veiculo::where('placa',"like" ,'%'.$request->input('placa').'%')->get();
+            $veiculo = Veiculo::where('status', '=', '0')
+                ->where('placa',"like" ,'%'.$request->input('placa').'%')->get();
         }else{
             $veiculo = Veiculo::get()->where('status', '=', '0');
         }

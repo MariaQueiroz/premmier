@@ -12,7 +12,7 @@
 
                     <div class="panel-body">
 
-                        <table id="tabela_relatorio" class="table">
+                        <table class="table">
                             <thead>
                             <th>Data</th>
                             <th>Valor</th>
@@ -24,9 +24,17 @@
                                 <tr>
                                     <td>{{$venda->data}}</td>
                                     <td>{{$venda->valor}}</td>
-                                    <td>{{$venda->cliente->nome}}</td>
-                                    <td>{{$venda->veiculo->modelo}}</td>
-                                </tr>
+                                    @if ($venda->cliente == null)
+                                        <td>Cliente Apagado</td>
+                                    @else
+                                        <td>{{$venda->cliente->nome}}</td>
+                                    @endif
+
+                                    @if ($venda->veiculo == null)
+                                        <td>Veiculo Apagado</td>
+                                    @else
+                                        <td>{{$venda->veiculo->modelo}}</td>
+                                    @endif
 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">

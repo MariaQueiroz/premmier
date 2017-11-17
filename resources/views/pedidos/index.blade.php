@@ -31,12 +31,18 @@
                             </thead>
                             <tbody>
                             @foreach ($pedidos as $pedido)
-                                <tr>
-                                    <td>{{$pedido->valor}}</td>
-                                    <td>{{$pedido->cliente->nome}}</td>
-                                    <td>{{$pedido->modelo}}</td>
-                                    <td>{{$pedido->data}}</td>
-                                    <td>{{$pedido->descricao}}</td>
+
+                                        <td>{{$pedido->valor}}</td>
+                                        @if ($pedido->cliente == null)
+                                            <td>Cliente Apagado</td>
+                                        @else
+                                            <td>{{$pedido->cliente->nome}}</td>
+                                        @endif
+                                        <td>{{$pedido->modelo}}</td>
+                                        <td>{{$pedido->data}}</td>
+                                        <td>{{$pedido->descricao}}</td>
+
+
 
 
                                     <td>

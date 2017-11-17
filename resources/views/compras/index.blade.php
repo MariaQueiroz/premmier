@@ -29,20 +29,24 @@
                             <th>Ações</th>
                             </thead>
                             <tbody>
-                            @foreach ($compras as $compra)
-                                <tr>
-                                    <td>{{$compra->data}}</td>
-                                    <td>{{$compra->valor}}</td>
-                                    <td>{{$compra->fornecedor->nome}}</td>
-                                    <td>{{$compra->veiculo->modelo}}</td>
 
-                                    <td>
+                                @foreach ($compras as $compra)
+                                    <tr>
+                                        <td>{{$compra->data}}</td>
+                                        <td>{{$compra->valor}}</td>
+                                        <td>{{$compra->fornecedor->nome}}</td>
 
-                                        <a href="{{route('compras.destroy',['id'=>$compra->id])}}"
-                                           class="btn-sm btn-danger">Remover</a>
+                                        @if ($compra->fornecedor->nome == null)
+                                            <td>Compra Apagado</td>
+                                        @else
+                                            <td>{{$compra->fornecedor->nome}}</td>
+                                        @endif
 
-                                    </td>
-                                </tr>
+                                        @if ($compra->veiculo == null)
+                                            <td>Compra Apagado</td>
+                                        @else
+                                            <td>{{$compra->veiculo->modelo}}</td>
+                                        @endif
 
 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

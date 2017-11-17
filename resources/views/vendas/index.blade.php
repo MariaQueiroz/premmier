@@ -35,7 +35,7 @@
 
                             {!! Form::close() !!}
 
-                        <table class="table">
+                        <table id="tabela_veiculo" class="table">
                             <thead>
                             <th>Data</th>
                             <th>Valor</th>
@@ -48,8 +48,17 @@
                                 <tr>
                                     <td>{{$venda->data}}</td>
                                     <td>{{$venda->valor}}</td>
-                                    <td>{{$venda->cliente->nome}}</td>
-                                    <td>{{$venda->veiculo->modelo}}</td>
+                                    @if ($venda->cliente == null)
+                                        <td>Cliente Apagado</td>
+                                    @else
+                                        <td>{{$venda->cliente->nome}}</td>
+                                    @endif
+
+                                @if ($venda->veiculo == null)
+                                        <td>Veiculo Apagado</td>
+                                    @else
+                                        <td>{{$venda->veiculo->modelo}}</td>
+                                    @endif
 
                                     <td>
                                         <a href="{{route('vendas.destroy',['id'=>$venda->id])}}"

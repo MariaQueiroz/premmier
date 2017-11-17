@@ -13,6 +13,6 @@ class Cliente extends Model
 
     public function vendas()
     {
-        return $this->hayMany('App\Venda');
+        return $this->hasMany('App\Venda');
     }
 }

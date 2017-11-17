@@ -18,7 +18,12 @@
                                 <strong>Sucesso!</strong> {{ Session::get('mensagem_sucesso') }}
                             </div>
                         @endif
-
+                            @if (Session::has('mensagem_nao_deleta_'))
+                                <div class="alert alert-danger alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <strong>Erro!</strong> {{ Session::get('mensagem_nao_deleta_') }}
+                                </div>
+                            @endif
 
                         <table class="table">
                             <thead>

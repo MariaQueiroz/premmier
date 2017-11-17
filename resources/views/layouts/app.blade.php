@@ -113,7 +113,7 @@
         $(document).ready(function(){
 
 
-            $('#tabela_relatorio,#tabela_fornecedor,#tabela_veiculo').DataTable( {
+            $('#tabela_relatorio,#tabela_fornecedor,#tabela_veiculo,#tabela_cliente,#tabela_atendente').DataTable( {
                 "language": {
                     "paginate": {
                         "previous": "Anterior",
@@ -121,7 +121,7 @@
                     },
                     "lengthMenu": "Mostrando _MENU_ por página",
                     "zeroRecords": "Nenhum dado encontrado - desculpe",
-                    "info": "Mostrando por página _PAGE_ de _PAGES_",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
                     "infoEmpty": "Nenhum dado disponível",
                     "infoFiltered": "(filtrado por _MAX_ total de dados)",
                     "search": "Pesquisar:"

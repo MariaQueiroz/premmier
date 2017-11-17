@@ -39,6 +39,6 @@ class Veiculo extends Model
 
     public function venda()
     {
-        return $this->hayOne('App\Venda');
+        return $this->hasOne('App\Venda');
     }
 }

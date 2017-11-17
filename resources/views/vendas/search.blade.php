@@ -50,17 +50,20 @@
                                 <tr>
                                     <td>{{$venda->data}}</td>
                                     <td>{{$venda->valor}}</td>
-                                    <td>{{$venda->cliente->nome}}</td>
-                                    <td>{{$venda->veiculo->modelo}}</td>
+                                    @if ($venda->cliente == null)
+                                        <td>Cliente Apagado</td>
+                                    @else
+                                        <td>{{$venda->cliente->nome}}</td>
+                                    @endif
 
-                                    <td>
-                                        <a href="{{route('vendas.destroy',['id'=>$venda->id])}}"
-                                           class="btn-sm btn-danger">Remover</a>
+                                    @if ($venda->veiculo == null)
+                                        <td>Veiculo Apagado</td>
+                                    @else
+                                        <td>{{$venda->veiculo->modelo}}</td>
+                                    @endif
 
-                                    </td>
-                                </tr>
 
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
