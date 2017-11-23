@@ -20,7 +20,7 @@
                         @endif
 
 
-                        <table class="table">
+                        <table id="tabela_veiculo" class="table">
                             <thead>
                             <th>Valor</th>
                             <th>Cliente</th>

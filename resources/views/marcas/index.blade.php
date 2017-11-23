@@ -25,7 +25,7 @@
                                 </div>
                             @endif
 
-                        <table class="table">
+                        <table id="tabela_veiculo" class="table">
                             <thead>
                             <th>Nome</th>
                             <th>Ações</th>

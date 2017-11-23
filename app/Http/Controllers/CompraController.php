@@ -31,7 +31,7 @@ class CompraController extends Controller
 
     }
 
-    public function update(CompraRequest $request,$id){
+    public function update(CompraRequest $request, $id){
         $compra = Compra::find($id)->update($request->all());
         return redirect()->route('compras');
     }

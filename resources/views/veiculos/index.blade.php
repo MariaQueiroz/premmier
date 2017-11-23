@@ -18,16 +18,7 @@
                                 <strong>Sucesso!</strong> {{ Session::get('mensagem_sucesso') }}
                             </div>
                         @endif
-                            {!! Form::open(['route' => ["veiculos.search"],'method'=>'post']) !!}
 
-                            {!! Form::label('placa', 'Pesquisa de Veículos por Placa') !!}
-                            {!! Form::input('text','placa',"", ['class' => 'form-control','','placeholder'=>'informe a placa do veículo']) !!}
-
-                            <div class="form-group">
-                                {!! Form::submit('Pesquisar',['class'=>'btn btn-primary'])!!}
-                            </div>
-
-                            {!! Form::close() !!}
 
 
                         <table id="tabela_veiculo" class="table">

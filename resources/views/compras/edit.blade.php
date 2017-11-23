@@ -10,19 +10,19 @@
                 @endforeach
             </ul>
         @endif
-        {!! Form::open(['route' => ["compras", $compra->id],'method'=>'put']) !!}
+        {!! Form::open(['route' => ["compras.update", $compra->id],'method'=>'put']) !!}
         <div class="form-group">
             {!! Form::label('data','Data:') !!}
-            {!! Form::date('nome',$data->data,['class'=>'form-control'])!!}
+            {!! Form::date('nome',$compra->data,['class'=>'form-control'])!!}
         </div>
         <div class="form-group">
             {!! Form::label('valor','Valor') !!}
-            {!! Form::text('valor',$valor->valor,['class'=>'form-control']) !!}
+            {!! Form::text('valor',$compra->valor,['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('compra_id','Compra:') !!}
-            {!! Form::select('compra_id',\App\Compra::orderBy("nome")->pluck('nome', 'id')->toArray(), null,['class'=>'form-control']) !!}
+            {!! Form::label('fornecedor_id','Fornecedor:') !!}
+            {!! Form::select('fornecedor_id',\App\Fornecedor::orderBy("nome")->pluck('nome', 'id')->toArray(), null,['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
@@ -35,7 +35,9 @@
             {!! Form::select('forma_pgto',['a vista'=>'A Vista','a prazo'=>'A Prazo'],null,['class'=>'form-control']) !!}
         </div>
 
-
+        <div class="form-group">
+            {!! Form::submit('Salvar',['class'=>'btn btn-primary'])!!}
+        </div>
 
 
 

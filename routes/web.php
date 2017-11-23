@@ -58,7 +58,10 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('{id}/edit', ['as' => 'clientes.edit', 'uses' => 'ClienteController@edit']);
         Route::put('{id}/update', ['as' => 'clientes.update', 'uses' => 'ClienteController@update']);
         Route::post('store', ['as' => 'clientes.store', 'uses' => 'ClienteController@store']);
+        Route::get('relatorio', ['as' => 'clientes.relatorio', 'uses' => 'ClienteController@relatorio']);
+
     });
+
 
     Route::group(['prefix' => 'atendentes', 'where' => ['id' => '[0-9]+']], function () {
         Route::get('', ['as' => 'atendentes', 'uses' => 'AtendenteController@index']);

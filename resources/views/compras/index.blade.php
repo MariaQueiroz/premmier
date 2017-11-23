@@ -20,7 +20,7 @@
                         @endif
 
 
-                        <table class="table">
+                        <table id="tabela_veiculo" class="table">
                             <thead>
                             <th>Data</th>
                             <th>Valor</th>
@@ -34,7 +34,6 @@
                                     <tr>
                                         <td>{{$compra->data}}</td>
                                         <td>{{$compra->valor}}</td>
-                                        <td>{{$compra->fornecedor->nome}}</td>
 
                                         @if ($compra->fornecedor->nome == null)
                                             <td>Compra Apagado</td>
@@ -47,7 +46,13 @@
                                         @else
                                             <td>{{$compra->veiculo->modelo}}</td>
                                         @endif
+                                        <td>
+                                            <a href="{{route('compras.edit',['id'=>$compra->id])}}"
+                                               class="btn-sm btn-success">Editar</a>
+                                            <a href="{{route('compras.destroy',['id'=>$compra->id])}}"
+                                               class="btn-sm btn-danger">Remover</a>
 
+                                        </td>
 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">

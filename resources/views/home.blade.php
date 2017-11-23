@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Bem Vinda(o) {{ Auth::user()->name }}!</div>
-
+                <div class="panel-heading"><strong>Bem Vinda(o) {{ Auth::user()->name }}!</strong></div>
+                <div class="panel-heading">Aqui você encontrará todos os Clientes que desejam algum de seus veículos em estoque<br> Boas Vendas</div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">

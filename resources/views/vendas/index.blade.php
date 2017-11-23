@@ -19,21 +19,7 @@
                             </div>
                         @endif
 
-                            {!! Form::open(['route' => ["vendas.search"],'method'=>'post']) !!}
-                            <div class="form-group">
-                                {!! Form::label('data','Data Inicial da Venda:') !!}
-                                {!! Form::date('dataInicial',"",['class'=>'form-control'])!!}
-                            </div>
 
-                            <div class="form-group">
-                                {!! Form::label('data','Data Final:') !!}
-                                {!! Form::date('dataFinal',"",['class'=>'form-control'])!!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::submit('Pesquisar',['class'=>'btn btn-primary'])!!}
-                            </div>
-
-                            {!! Form::close() !!}
 
                         <table id="tabela_veiculo" class="table">
                             <thead>
