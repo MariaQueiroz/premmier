@@ -69,7 +69,6 @@
                                     <li><a href="{{ url('/atendentes') }}">Atendentes</a></li>
                                     <li><a href="{{ url('/fornecedors') }}">Fornecedores</a></li>
                                     <li><a href="{{ url('/compras') }}">Compras</a></li>
-                                    <li><a href="{{ url('/modelos') }}">Modelos</a></li>
                                     <li><a href="{{ url('/marcas') }}">Marcas</a></li>
                                     <li><a href="{{ url('/vendas') }}">Vendas</a></li>
                                     <li><a href="{{ url('/pedidos') }}">Pedidos</a></li>

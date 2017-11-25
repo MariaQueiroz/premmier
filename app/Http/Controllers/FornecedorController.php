@@ -24,9 +24,22 @@ class FornecedorController extends Controller
         Fornecedor::create($novo_fornecedor);
         return redirect()->route('fornecedors');
     }
-    public function destroy($id){
-        Fornecedor::find($id)->delete();
-        return redirect()->route('fornecedors');
+    public function destroy($id)
+    {
+
+        try {
+            Fornecedor::find($id)->delete();
+            return redirect()->route('fornecedors');
+        } catch (\Exception $e) {
+            \Session::flash('mensagem_nao_deleta', 'Marca não pode ser deletada!');
+            return redirect()->route('fornecedors');
+            //if($e->getCode() == "23000"){ //23000 is sql code for integrity constraint violation
+             //return error to user here
+             //\Session::flash('mensagem_nao_deleta','Marca não pode ser deletada!');
+             //return redirect()->route('fornecedors');
+              //}
+
+        }
     }
 
     public function edit($id){

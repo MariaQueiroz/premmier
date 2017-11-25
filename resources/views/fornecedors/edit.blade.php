@@ -22,7 +22,7 @@
 
         <div class="form-group">
             {!! Form::label('endereco','Endereço') !!}
-            {!! Form::text('endereco',$fornecedor->email,['class'=>'form-control']) !!}
+            {!! Form::text('endereco',$fornecedor->endereco,['class'=>'form-control']) !!}
         </div>
 
 

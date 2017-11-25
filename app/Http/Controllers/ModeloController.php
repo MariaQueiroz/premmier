@@ -21,6 +21,7 @@ class ModeloController extends Controller
         return redirect()->route('modelos');
     }
     public function destroy($id){
+
         Modelo::find($id)->delete();
         return redirect()->route('modelos');
     }
